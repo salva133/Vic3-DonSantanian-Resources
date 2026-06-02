@@ -1,11 +1,11 @@
 {
   "name": "DonSantanian Resources",
-  "id": "dsr",
+  "id": "3737342643",
   "version": "0.1.0",
   "supported_game_version": "1.13.*",
   "short_description": "Shared geography and religion scripted triggers used as a dependency by other mods.",
   "tags": [
-    "Scripting",
+    "Utilities",
     "1.13"
   ],
   "relationships": [],
