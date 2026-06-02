@@ -15,8 +15,6 @@ all reference the definitions here.
 - **Religion triggers** — heritage checks: Christian, Jewish, Muslim, and
   Abrahamic-non-Mohammedan.
 
-All triggers carry the `dsr_` prefix.
-
 ## Using it as a dependency
 
 This mod does nothing on its own — it is meant to be loaded underneath the mods
