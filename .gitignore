@@ -1,0 +1,11 @@
+# Vanilla mirror folders kept locally for reference
+dlc/
+soundtrack/
+fonts/
+map_data/
+
+# Scratch artifacts
+changes.txt
+localizations_*.txt
+scripts_*.txt
+diff.txt
