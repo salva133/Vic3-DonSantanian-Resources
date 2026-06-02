@@ -1,7 +1,7 @@
 ﻿### State geography triggers
-dsr_state_is_in_europe = {
+state_is_in_europe = {
 	custom_description = {
-		text = dsr_state_is_in_europe_desc
+		text = state_is_in_europe_desc
 		subject = this # State
 		OR = {
 			region ?= sr:region_western_europe
@@ -15,9 +15,9 @@ dsr_state_is_in_europe = {
 	}
 }
 
-dsr_state_is_in_north_america = {
+state_is_in_north_america = {
 	custom_description = {
-		text = dsr_state_is_in_north_america_desc
+		text = state_is_in_north_america_desc
 		subject = this
 		OR = {
 			region ?= sr:region_canada
@@ -28,17 +28,17 @@ dsr_state_is_in_north_america = {
 	}
 }
 
-dsr_state_is_in_central_america = {
+state_is_in_central_america = {
 	custom_description = {
-		text = dsr_state_is_in_central_america_desc
+		text = state_is_in_central_america_desc
 		subject = this
 		region ?= sr:region_central_america
 	}
 }
 
-dsr_state_is_in_south_america = {
+state_is_in_south_america = {
 	custom_description = {
-		text = dsr_state_is_in_south_america_desc
+		text = state_is_in_south_america_desc
 		subject = this
 		OR = {
 			region ?= sr:region_brazil
@@ -49,21 +49,21 @@ dsr_state_is_in_south_america = {
 	}
 }
 
-dsr_state_is_in_americas = {
+state_is_in_americas = {
 	custom_description = {
-		text = dsr_state_is_in_americas_desc
+		text = state_is_in_americas_desc
 		subject = this
 		OR = {
-			dsr_state_is_in_north_america = yes
-			dsr_state_is_in_central_america = yes
-			dsr_state_is_in_south_america = yes
+			state_is_in_north_america = yes
+			state_is_in_central_america = yes
+			state_is_in_south_america = yes
 		}
 	}
 }
 
-dsr_state_is_in_africa = {
+state_is_in_africa = {
 	custom_description = {
-		text = dsr_state_is_in_africa_desc
+		text = state_is_in_africa_desc
 		subject = this
 		OR = {
 			region ?= sr:region_nile_basin
@@ -76,9 +76,9 @@ dsr_state_is_in_africa = {
 	}
 }
 
-dsr_state_is_in_middle_east = {
+state_is_in_middle_east = {
 	custom_description = {
-		text = dsr_state_is_in_middle_east_desc
+		text = state_is_in_middle_east_desc
 		subject = this
 		OR = {
 			region ?= sr:region_near_east
@@ -88,9 +88,9 @@ dsr_state_is_in_middle_east = {
 	}
 }
 
-dsr_state_is_in_central_asia = {
+state_is_in_central_asia = {
 	custom_description = {
-		text = dsr_state_is_in_central_asia_desc
+		text = state_is_in_central_asia_desc
 		subject = this
 		OR = {
 			region ?= sr:region_himalayas
@@ -99,9 +99,9 @@ dsr_state_is_in_central_asia = {
 	}
 }
 
-dsr_state_is_in_india = {
+state_is_in_india = {
 	custom_description = {
-		text = dsr_state_is_in_india_desc
+		text = state_is_in_india_desc
 		subject = this
 		OR = {
 			region ?= sr:region_north_india
@@ -110,9 +110,9 @@ dsr_state_is_in_india = {
 	}
 }
 
-dsr_state_is_in_east_asia = {
+state_is_in_east_asia = {
 	custom_description = {
-		text = dsr_state_is_in_east_asia_desc
+		text = state_is_in_east_asia_desc
 		subject = this
 		OR = {
 			region ?= sr:region_north_china
@@ -123,9 +123,9 @@ dsr_state_is_in_east_asia = {
 	}
 }
 
-dsr_state_is_in_china = {
+state_is_in_china = {
 	custom_description = {
-		text = dsr_state_is_in_china_desc
+		text = state_is_in_china_desc
 		subject = this
 		OR = {
 			region ?= sr:region_south_china
@@ -135,9 +135,9 @@ dsr_state_is_in_china = {
 	}
 }
 
-dsr_state_is_in_southeast_asia = {
+state_is_in_southeast_asia = {
 	custom_description = {
-		text = dsr_state_is_in_southeast_asia_desc
+		text = state_is_in_southeast_asia_desc
 		subject = this
 		OR = {
 			region ?= sr:region_indochina
@@ -149,122 +149,122 @@ dsr_state_is_in_southeast_asia = {
 ### Country geography triggers
 # exists = capital checks are necessary only because we may test these triggers and scope switch to capitals before states are initialized properly
 
-dsr_country_is_in_china = {
+country_is_in_china = {
 	custom_description = {
-		text = dsr_country_is_in_china_desc
+		text = country_is_in_china_desc
 		subject = this # Country
 
 		capital ?= {
-			dsr_state_is_in_china = yes
+			state_is_in_china = yes
 		}
 	}
 }
 
-dsr_country_is_in_europe = {
+country_is_in_europe = {
 	custom_description = {
-		text = dsr_country_is_in_europe_desc
+		text = country_is_in_europe_desc
 		subject = this
 
 		capital ?= {
-			dsr_state_is_in_europe = yes
+			state_is_in_europe = yes
 		}
 	}
 }
 
-dsr_country_is_in_north_america = {
+country_is_in_north_america = {
 	custom_description = {
-		text = dsr_country_is_in_north_america_desc
+		text = country_is_in_north_america_desc
 		subject = this
 
 		capital ?= {
-			dsr_state_is_in_north_america = yes
+			state_is_in_north_america = yes
 		}
 	}
 }
 
-dsr_country_is_in_central_america = {
+country_is_in_central_america = {
 	custom_description = {
-		text = dsr_country_is_in_central_america_desc
+		text = country_is_in_central_america_desc
 		subject = this
 
 		capital ?= {
-			dsr_state_is_in_central_america = yes
+			state_is_in_central_america = yes
 		}
 	}
 }
 
-dsr_country_is_in_south_america = {
+country_is_in_south_america = {
 	custom_description = {
-		text = dsr_country_is_in_south_america_desc
+		text = country_is_in_south_america_desc
 		subject = this
 
 		capital ?= {
-			dsr_state_is_in_south_america = yes
+			state_is_in_south_america = yes
 		}
 	}
 }
 
-dsr_country_is_in_africa = {
+country_is_in_africa = {
 	custom_description = {
-		text = dsr_country_is_in_africa_desc
+		text = country_is_in_africa_desc
 		subject = this
 
 		capital ?= {
-			dsr_state_is_in_africa = yes
+			state_is_in_africa = yes
 		}
 	}
 }
 
-dsr_country_is_in_middle_east = {
+country_is_in_middle_east = {
 	custom_description = {
-		text = dsr_country_is_in_middle_east_desc
+		text = country_is_in_middle_east_desc
 		subject = this
 
 		capital ?= {
-			dsr_state_is_in_middle_east = yes
+			state_is_in_middle_east = yes
 		}
 	}
 }
 
-dsr_country_is_in_central_asia = {
+country_is_in_central_asia = {
 	custom_description = {
-		text = dsr_country_is_in_central_asia_desc
+		text = country_is_in_central_asia_desc
 		subject = this
 
 		capital ?= {
-			dsr_state_is_in_central_asia = yes
+			state_is_in_central_asia = yes
 		}
 	}
 }
 
-dsr_country_is_in_india = {
+country_is_in_india = {
 	custom_description = {
-		text = dsr_country_is_in_india_desc
+		text = country_is_in_india_desc
 		subject = this
 		capital ?= {
-			dsr_state_is_in_india = yes
+			state_is_in_india = yes
 		}
 	}
 }
 
-dsr_country_is_in_east_asia = {
+country_is_in_east_asia = {
 	custom_description = {
-		text = dsr_country_is_in_east_asia_desc
+		text = country_is_in_east_asia_desc
 		subject = this
 
 		capital ?= {
-			dsr_state_is_in_east_asia = yes
+			state_is_in_east_asia = yes
 		}
 	}
 }
 
-dsr_country_is_in_southeast_asia = {
+country_is_in_southeast_asia = {
 	custom_description = {
-		text = dsr_country_is_in_southeast_asia_desc
+		text = country_is_in_southeast_asia_desc
 		subject = this
 
 		capital ?= {
-			dsr_state_is_in_southeast_asia = yes
+			state_is_in_southeast_asia = yes
 		}
 	}
 }
