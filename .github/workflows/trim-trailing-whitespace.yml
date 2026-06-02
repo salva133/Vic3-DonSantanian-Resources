@@ -1,0 +1,11 @@
+﻿name: Trim Trailing Whitespace
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  trim-whitespace:
+    uses: salva133/My-Workflows/.github/workflows/trim-trailing-whitespace.yml@latest
