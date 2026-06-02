@@ -1,0 +1,25 @@
+﻿### Religion heritage triggers
+dsr_is_christian = {
+	religion = {
+		has_discrimination_trait = heritage_christian
+	}
+}
+
+dsr_is_jewish = {
+	religion = {
+		has_discrimination_trait = heritage_jewish
+	}
+}
+
+dsr_is_muslim = {
+	religion = {
+		has_discrimination_trait = heritage_islamic
+	}
+}
+
+dsr_is_abrahamic_non_mohammedan = {
+	OR = {
+		dsr_is_christian = yes
+		dsr_is_jewish = yes
+	}
+}
