@@ -13,4 +13,4 @@ This mod does nothing on its own — it is meant to be loaded underneath the mod
 
 ## Compatibility
 
-The triggers depend only on vanilla state regions (`sr:region_*`) and vanilla discrimination heritage traits, so the library tracks vanilla and carries no gameplay content of its own.
+The triggers depend only on vanilla state regions `sr:region_*` and vanilla discrimination heritage traits, so the library tracks vanilla and carries no gameplay content of its own.
