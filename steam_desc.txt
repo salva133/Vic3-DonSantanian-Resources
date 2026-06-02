@@ -19,8 +19,6 @@ all reference the definitions here.
 [/list]
   Abrahamic-non-Mohammedan.
 
-All triggers carry the [code]dsr_[/code] prefix.
-
 [h2]Using it as a dependency[/h2]
 
 This mod does nothing on its own — it is meant to be loaded underneath the mods
