@@ -24,3 +24,29 @@
  country_is_in_india_desc:"Capital is in India"
  country_is_in_east_asia_desc:"Capital is in East Asia"
  country_is_in_southeast_asia_desc:"Capital is in Southeast Asia"
+ # Country status
+ country_is_recognised_desc:"Is a recognized country"
+ # Government shape
+ country_is_non_leftist_republic_desc:"Is a non-leftist republic"
+ country_is_monanarchy_desc:"Is both a monarchy and an anarchy"
+ country_has_fascist_government_trigger_desc:"Has a fascist government"
+ is_welfare_state_with_low_legitimacy_desc:"Is a welfare state with low legitimacy"
+ # Ideology availability
+ is_possible_ideology_fascist_desc:"Has researched the prerequisite for Fascism"
+ is_possible_ideology_communist_desc:"Has researched the prerequisite for Communism"
+ is_possible_ideology_anarchist_desc:"Has researched the prerequisite for Anarchism"
+ # Law stance
+ reactionary_stance_on_free_speech_desc:"Holds a reactionary stance on free speech"
+ liberal_stance_on_free_speech_desc:"Holds a liberal stance on free speech"
+ staunch_multiculturalist_desc:"Is a staunch multiculturalist"
+ # Migration
+ country_eligible_as_mass_migration_source_country_desc:"Is eligible as a mass-migration source"
+ # Agitator alignment
+ is_leftist_agitator_desc:"Is a left-wing agitator"
+ is_right_wing_agitator_desc:"Is a right-wing agitator"
+ # State control
+ state_is_occupied_desc:"Is occupied"
+ state_is_occupied_by_root_desc:"Is occupied by us"
+ # Religion-nation
+ country_is_jewish_nation_desc:"Is a Jewish nation"
+ country_is_a_judeo_christian_nation_desc:"Is a Judeo-Christian nation"

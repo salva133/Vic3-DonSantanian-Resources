@@ -1,0 +1,16 @@
+﻿### State control triggers
+state_is_occupied = {
+	custom_description = {
+		text = state_is_occupied_desc
+		subject = this
+		NOT = { controller = owner }
+	}
+}
+
+state_is_occupied_by_root = {
+	custom_description = {
+		text = state_is_occupied_by_root_desc
+		subject = this
+		controller = root
+	}
+}

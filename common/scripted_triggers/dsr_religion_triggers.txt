@@ -23,3 +23,29 @@ is_abrahamic_non_mohammedan = {
 		is_jewish = yes
 	}
 }
+
+### Religion-nation triggers
+country_is_jewish_nation = {
+	custom_description = {
+		text = country_is_jewish_nation_desc
+		subject = this
+		any_primary_culture = {
+			count = all
+			has_discrimination_trait = heritage_jewish
+		}
+		country_has_state_religion = rel:jewish
+	}
+}
+
+country_is_a_judeo_christian_nation = {
+	custom_description = {
+		text = country_is_a_judeo_christian_nation_desc
+		subject = this
+		religion = {
+			OR = {
+				has_discrimination_trait = heritage_christian
+				has_discrimination_trait = heritage_jewish
+			}
+		}
+	}
+}

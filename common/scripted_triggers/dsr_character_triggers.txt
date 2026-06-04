@@ -1,0 +1,25 @@
+﻿### Agitator alignment triggers
+is_leftist_agitator = {
+	custom_description = {
+		text = is_leftist_agitator_desc
+		subject = this
+		has_role_of_type = agitator
+		OR = {
+			has_progressive_ideology = yes
+			has_socialist_ideology = yes
+		}
+	}
+}
+
+is_right_wing_agitator = {
+	custom_description = {
+		text = is_right_wing_agitator_desc
+		subject = this
+		has_role_of_type = agitator
+		OR = {
+			has_reactionary_ideology = yes
+			has_conservative_ideology = yes
+			has_monarchist_ideology = yes
+		}
+	}
+}
