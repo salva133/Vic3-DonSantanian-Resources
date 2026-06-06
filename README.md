@@ -8,6 +8,7 @@ A small dependency mod that provides a single, shared set of scripted triggers f
 - **Religion triggers** — heritage checks: Christian, Jewish, Muslim, and Abrahamic-non-Mohammedan, plus the nation-level Jewish and Judeo-Christian checks.
 - **Government & politics triggers** — recognised country, republic and monarchy/anarchy shapes, fascist-government detection, welfare-state-with-low-legitimacy, ideology-availability (Fascism / Communism / Anarchism), and free-speech / multiculturalism law stances.
 - **State & demographic triggers** — occupation checks, agitator alignment (left-wing / right-wing), and mass-migration source eligibility.
+- **Country effects** — a bulk effect that strips every economy building (industry, agriculture, mines, plantations, resources, power plants, ports and railways) from all states of a country.
 
 ## Using it as a dependency
 
