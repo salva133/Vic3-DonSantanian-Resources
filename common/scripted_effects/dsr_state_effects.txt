@@ -1,0 +1,36 @@
+﻿### State-scoped helpers
+
+# Macro helper: tag a state region with a state trait when none of its
+# contained states already carries it. Idempotent across re-runs so this is
+# safe to call from on_game_started even when traits were applied previously.
+# Callable from any scope.
+add_state_trait_to_region_if_missing = {
+	s:$STATE$ = {
+		if = {
+			limit = {
+				any_scope_state = {
+					NOT = { has_state_trait = $TRAIT$ }
+				}
+			}
+			add_state_trait = $TRAIT$
+		}
+	}
+}
+
+# Kills 99% of every pop in the state in scope whose culture is not a primary
+# culture of the state's root country.
+state_kill_all_non_primary_pops = {
+	every_scope_culture = {
+		limit = {
+			NOT = {
+				is_primary_culture_of = root
+			}
+		}
+		prev = {
+			kill_population_percent_in_state = {
+				percent = 0.99
+				culture = prev
+			}
+		}
+	}
+}
