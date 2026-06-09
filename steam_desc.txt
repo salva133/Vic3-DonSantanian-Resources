@@ -9,7 +9,9 @@ A small dependency mod that provides a single, shared set of scripted triggers a
 [*][b]Religion triggers[/b] — heritage checks: Christian, Jewish, Muslim, and Abrahamic-non-Mohammedan, plus the nation-level Jewish and Judeo-Christian checks.
 [*][b]Government & politics triggers[/b] — recognised country, republic and monarchy/anarchy shapes, fascist-government detection, welfare-state-with-low-legitimacy, ideology-availability (Fascism / Communism / Anarchism), and free-speech / multiculturalism law stances.
 [*][b]State & demographic triggers[/b] — occupation checks, agitator alignment (left-wing / right-wing), and mass-migration source eligibility.
-[*][b]Country effects[/b] — a bulk effect that strips every economy building (industry, agriculture, mines, plantations, resources, power plants, ports and railways) from all states of a country.
+[*][b]Coat-of-arms triggers[/b] — government-shape checks for dynamic coat-of-arms definitions: monarchy, democratic republic and undemocratic republic, each with the [code]coa_def_*[/code] actor-scope wrapper used by coat-of-arms files.
+[*][b]Country effects[/b] — a bulk effect that strips every economy building (industry, agriculture, mines, plantations, resources, power plants, ports and railways) from all states of a country, random Governance Principle / Distribution of Power assignment, decentralizing every country beyond the top 200 by prestige, exiling a country's least popular agitator, and pop-surgery helpers that kill or replace non-primary-culture pops.
+[*][b]State effects[/b] — tagging a state region with a state trait if missing (idempotent, parameterized), and killing the non-primary-culture pops of a single state.
 [*][b]Dynamic naming effects[/b] — parameterized building blocks for culture-based state and hub renaming (coastal / inland / hubs-only layouts, plus keep-vanilla variants for states vanilla already renames for other languages). A consuming mod supplies its own state dispatcher, language trait, localization keys and on_action hooks; the vanilla [code]no_dynamic_naming[/code] game rule is honoured.
 [/list]
 
