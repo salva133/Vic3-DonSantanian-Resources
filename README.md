@@ -1,6 +1,6 @@
 # DonSantanian Resources
 
-A small dependency mod that provides a single, shared set of scripted triggers for my other Victoria 3 mods. Instead of each mod shipping its own copy of the same checks, they all reference the definitions here.
+A small dependency mod that provides a single, shared set of scripted triggers and effects for my other Victoria 3 mods. Instead of each mod shipping its own copy of the same checks and helpers, they all reference the definitions here.
 
 ## What it provides
 
@@ -9,6 +9,7 @@ A small dependency mod that provides a single, shared set of scripted triggers f
 - **Government & politics triggers** — recognised country, republic and monarchy/anarchy shapes, fascist-government detection, welfare-state-with-low-legitimacy, ideology-availability (Fascism / Communism / Anarchism), and free-speech / multiculturalism law stances.
 - **State & demographic triggers** — occupation checks, agitator alignment (left-wing / right-wing), and mass-migration source eligibility.
 - **Country effects** — a bulk effect that strips every economy building (industry, agriculture, mines, plantations, resources, power plants, ports and railways) from all states of a country.
+- **Dynamic naming effects** — parameterized building blocks for culture-based state and hub renaming (coastal / inland / hubs-only layouts, plus keep-vanilla variants for states vanilla already renames for other languages). A consuming mod supplies its own state dispatcher, language trait, localization keys and on_action hooks; the vanilla `no_dynamic_naming` game rule is honoured.
 
 ## Using it as a dependency
 

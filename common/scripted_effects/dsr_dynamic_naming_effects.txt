@@ -1,0 +1,172 @@
+﻿### Dynamic state and hub naming building blocks
+
+# Generic, parameterized helpers for culture-based dynamic state and hub
+# names, mirroring vanilla's evaluate_and_assign_state_hub_dynamic_names
+# pattern (00_dynamic_state_names.txt). Everything here depends only on
+# vanilla content: the no_dynamic_naming game rule, discrimination traits
+# and the state/hub naming effects.
+#
+# A consuming mod supplies:
+# - a state-scoped dispatcher effect that maps each of its state regions to
+#   the assign_culture_state_hub_names_* variant matching that state's hub
+#   layout,
+# - localization keys $STATE$_$SUFFIX$ and HUB_NAME_$STATE$_<hub>_$SUFFIX$
+#   for every hub the chosen variant sets,
+# - its own on_action hooks (on_state_owner_change, on_state_created,
+#   on_become_subject, on_become_independent and game start) that call
+#   evaluate_and_assign_state_hub_names with the dispatcher.
+#
+# Parameters:
+# - ASSIGN_EFFECT: name of the consuming mod's state-scoped dispatcher effect
+# - STATE:  state region key, e.g. STATE_NORMANDY
+# - TRAIT:  discrimination trait tested against the owner's primary cultures,
+#           e.g. language_germanophone
+# - SUFFIX: localization key suffix, e.g. german
+# - VANILLA_NAMES_TRIGGER: country-scoped scripted trigger that is true when
+#   vanilla's own dynamic naming handles the owner (keep_vanilla variants
+#   only)
+#
+# Cross-mod caveat: the else branches reset names to vanilla defaults, so two
+# mods handling the same state region for different traits will fight each
+# other. A state region should be dispatched by exactly one mod; where
+# vanilla itself already names the state for other languages, use the
+# keep_vanilla variants.
+
+# Gate on the vanilla no_dynamic_naming game rule, then hand over to the
+# consuming mod's dispatcher. State scope.
+evaluate_and_assign_state_hub_names = {
+	if = {
+		limit = { has_game_rule = no_dynamic_naming }
+		reset_state_name = yes
+		reset_hub_names = yes
+	}
+	else = {
+		$ASSIGN_EFFECT$ = yes
+	}
+}
+
+# Coastal states: state name + city / port / mine / farm / wood hubs.
+assign_culture_state_hub_names_coastal = {
+	if = {
+		limit = {
+			owner = {
+				any_primary_culture = {
+					has_discrimination_trait = $TRAIT$
+				}
+			}
+		}
+		set_state_name = $STATE$_$SUFFIX$
+		set_hub_name = { type = city name = HUB_NAME_$STATE$_city_$SUFFIX$ }
+		set_hub_name = { type = port name = HUB_NAME_$STATE$_port_$SUFFIX$ }
+		set_hub_name = { type = mine name = HUB_NAME_$STATE$_mine_$SUFFIX$ }
+		set_hub_name = { type = farm name = HUB_NAME_$STATE$_farm_$SUFFIX$ }
+		set_hub_name = { type = wood name = HUB_NAME_$STATE$_wood_$SUFFIX$ }
+	}
+	else = {
+		# Reset to vanilla defaults when an owner without the trait holds the state.
+		reset_state_name = yes
+		reset_hub_names = yes
+	}
+}
+
+# Inland states: state name + city / mine / farm / wood hubs (no port).
+assign_culture_state_hub_names_inland = {
+	if = {
+		limit = {
+			owner = {
+				any_primary_culture = {
+					has_discrimination_trait = $TRAIT$
+				}
+			}
+		}
+		set_state_name = $STATE$_$SUFFIX$
+		set_hub_name = { type = city name = HUB_NAME_$STATE$_city_$SUFFIX$ }
+		set_hub_name = { type = mine name = HUB_NAME_$STATE$_mine_$SUFFIX$ }
+		set_hub_name = { type = farm name = HUB_NAME_$STATE$_farm_$SUFFIX$ }
+		set_hub_name = { type = wood name = HUB_NAME_$STATE$_wood_$SUFFIX$ }
+	}
+	else = {
+		reset_state_name = yes
+		reset_hub_names = yes
+	}
+}
+
+# Hubs-only states: mine / farm / wood hubs only; the state name and city hub
+# stay untouched while the owner has the trait.
+assign_culture_state_hub_names_hubs_only = {
+	if = {
+		limit = {
+			owner = {
+				any_primary_culture = {
+					has_discrimination_trait = $TRAIT$
+				}
+			}
+		}
+		set_hub_name = { type = mine name = HUB_NAME_$STATE$_mine_$SUFFIX$ }
+		set_hub_name = { type = farm name = HUB_NAME_$STATE$_farm_$SUFFIX$ }
+		set_hub_name = { type = wood name = HUB_NAME_$STATE$_wood_$SUFFIX$ }
+	}
+	else = {
+		reset_state_name = yes
+		reset_hub_names = yes
+	}
+}
+
+# keep_vanilla variants: for states that also carry vanilla dynamic-name
+# branches for other languages. Sets names when the owner has TRAIT; resets
+# ONLY when VANILLA_NAMES_TRIGGER is false for the owner, so vanilla's
+# competing branches keep working for the languages they cover.
+assign_culture_state_hub_names_coastal_keep_vanilla = {
+	if = {
+		limit = {
+			owner = {
+				any_primary_culture = {
+					has_discrimination_trait = $TRAIT$
+				}
+			}
+		}
+		set_state_name = $STATE$_$SUFFIX$
+		set_hub_name = { type = city name = HUB_NAME_$STATE$_city_$SUFFIX$ }
+		set_hub_name = { type = port name = HUB_NAME_$STATE$_port_$SUFFIX$ }
+		set_hub_name = { type = mine name = HUB_NAME_$STATE$_mine_$SUFFIX$ }
+		set_hub_name = { type = farm name = HUB_NAME_$STATE$_farm_$SUFFIX$ }
+		set_hub_name = { type = wood name = HUB_NAME_$STATE$_wood_$SUFFIX$ }
+	}
+	else_if = {
+		limit = {
+			owner = {
+				NOT = { $VANILLA_NAMES_TRIGGER$ = yes }
+			}
+		}
+		# Owner speaks neither a vanilla-handled language nor has the trait:
+		# safe to reset to vanilla defaults.
+		reset_state_name = yes
+		reset_hub_names = yes
+	}
+}
+
+assign_culture_state_hub_names_inland_keep_vanilla = {
+	if = {
+		limit = {
+			owner = {
+				any_primary_culture = {
+					has_discrimination_trait = $TRAIT$
+				}
+			}
+		}
+		set_state_name = $STATE$_$SUFFIX$
+		set_hub_name = { type = city name = HUB_NAME_$STATE$_city_$SUFFIX$ }
+		set_hub_name = { type = mine name = HUB_NAME_$STATE$_mine_$SUFFIX$ }
+		set_hub_name = { type = farm name = HUB_NAME_$STATE$_farm_$SUFFIX$ }
+		set_hub_name = { type = wood name = HUB_NAME_$STATE$_wood_$SUFFIX$ }
+	}
+	else_if = {
+		limit = {
+			owner = {
+				NOT = { $VANILLA_NAMES_TRIGGER$ = yes }
+			}
+		}
+		reset_state_name = yes
+		reset_hub_names = yes
+	}
+}
