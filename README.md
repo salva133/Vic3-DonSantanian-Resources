@@ -1,6 +1,6 @@
 # DonSantanian Resources
 
-A small dependency mod that provides a single, shared set of scripted triggers for my other Victoria 3 mods. Instead of each mod shipping its own copy of the same checks, they all reference the definitions here.
+A small dependency mod that provides a single, shared set of scripted triggers and effects for my other Victoria 3 mods. Instead of each mod shipping its own copy of the same checks and helpers, they all reference the definitions here.
 
 ## What it provides
 
@@ -8,7 +8,10 @@ A small dependency mod that provides a single, shared set of scripted triggers f
 - **Religion triggers** — heritage checks: Christian, Jewish, Muslim, and Abrahamic-non-Mohammedan, plus the nation-level Jewish and Judeo-Christian checks.
 - **Government & politics triggers** — recognised country, republic and monarchy/anarchy shapes, fascist-government detection, welfare-state-with-low-legitimacy, ideology-availability (Fascism / Communism / Anarchism), and free-speech / multiculturalism law stances.
 - **State & demographic triggers** — occupation checks, agitator alignment (left-wing / right-wing), and mass-migration source eligibility.
-- **Country effects** — a bulk effect that strips every economy building (industry, agriculture, mines, plantations, resources, power plants, ports and railways) from all states of a country.
+- **Coat-of-arms triggers** — government-shape checks for dynamic coat-of-arms definitions: monarchy, democratic republic and undemocratic republic, each with the `coa_def_*` actor-scope wrapper used by coat-of-arms files.
+- **Country effects** — a bulk effect that strips every economy building (industry, agriculture, mines, plantations, resources, power plants, ports and railways) from all states of a country, random Governance Principle / Distribution of Power assignment, decentralizing every country beyond the top 200 by prestige, exiling a country's least popular agitator, and pop-surgery helpers that kill or replace non-primary-culture pops.
+- **State effects** — tagging a state region with a state trait if missing (idempotent, parameterized), and killing the non-primary-culture pops of a single state.
+- **Dynamic naming effects** — parameterized building blocks for culture-based state and hub renaming (coastal / inland / hubs-only layouts, plus keep-vanilla variants for states vanilla already renames for other languages). A consuming mod supplies its own state dispatcher, language trait, localization keys and on_action hooks; the vanilla `no_dynamic_naming` game rule is honoured.
 
 ## Using it as a dependency
 

@@ -62,3 +62,221 @@ remove_all_economy_buildings_from_country = {
 		if = { limit = { has_building = building_railway } remove_building = building_railway }
 	}
 }
+
+### Random law assignment
+
+# Randomly sets the Governance Principle. Country scope.
+set_random_governance_principle = {
+	custom_tooltip = {
+		text = set_random_governance_principle_tt
+		random_list = {
+			1 = { activate_law = law_type:law_monarchy }
+			1 = { activate_law = law_type:law_presidential_republic }
+			1 = { activate_law = law_type:law_parliamentary_republic }
+			1 = { activate_law = law_type:law_theocracy }
+			1 = { activate_law = law_type:law_council_republic }
+			1 = { activate_law = law_type:law_corporate_state }
+		}
+	}
+}
+
+# Randomly sets the Distribution of Power. Country scope.
+set_random_distribution_of_power = {
+	custom_tooltip = {
+		text = set_random_distribution_of_power_tt
+		random_list = {
+			1 = { activate_law = law_type:law_autocracy }
+			1 = {
+				activate_law = law_type:law_technocracy
+				random_list = {
+					1 = { activate_law = law_type:law_corporate_state }
+					1 = { activate_law = law_type:law_council_republic }
+				}
+				random_list = { # Technocratic economy system must be modern
+					1 = { activate_law = law_type:law_command_economy }
+					1 = { activate_law = law_type:law_cooperative_ownership }
+					1 = { activate_law = law_type:law_interventionism }
+				}
+			}
+			1 = { activate_law = law_type:law_oligarchy }
+			1 = { activate_law = law_type:law_landed_voting }
+			1 = { activate_law = law_type:law_wealth_voting }
+			1 = { activate_law = law_type:law_census_voting }
+			1 = { activate_law = law_type:law_universal_suffrage }
+			1 = { # Anarchy comes as bundle
+				activate_law = law_type:law_anarchy
+				activate_law = law_type:law_council_republic
+				activate_law = law_type:law_multicultural
+				activate_law = law_type:law_total_separation
+				activate_law = law_type:law_cooperative_ownership
+				activate_law = law_type:law_no_migration_controls
+			}
+			1 = { activate_law = law_type:law_single_party_state }
+		}
+	}
+}
+
+### World / country surgery
+
+# Turns every country beyond the top 200 by prestige into a decentralized
+# country. Callable from any scope; leaves the country_rank global variable
+# behind.
+decentralize_countries = {
+	set_global_variable = {
+		name = country_rank
+		value = 0
+	}
+	ordered_country = {
+		limit = {
+			NOT = { is_country_type = decentralized }
+		}
+		order_by = prestige
+		check_range_bounds = no
+		change_global_variable = {
+			name = country_rank
+			add = 1
+		}
+		if = {
+			limit = {
+				global_var:country_rank >= 200
+			}
+			set_country_type = decentralized
+		}
+	}
+}
+
+# Exiles the least popular agitator of the country in scope, saving them as
+# scope:exiled_character for follow-up script.
+exile_least_popular_agitator = {
+	if = {
+		limit = {
+			any_scope_character = {
+				has_role_of_type = agitator
+			}
+		}
+		ordered_scope_character = {
+			check_range_bounds = no
+			limit = { has_role_of_type = agitator }
+			order_by = popularity
+			position = 99
+			save_scope_as = exiled_character
+			exile_character = yes
+		}
+	}
+}
+
+### Pop surgery (country scope)
+
+# Kills 99% of every non-primary-culture pop in every state of the country in
+# scope, then starts enacting Slavery Banned if slavery is still legal.
+country_kill_all_non_primary_pops_in_all_states = {
+	every_scope_state = {
+		state_kill_all_non_primary_pops = yes
+	}
+	if = {
+		limit = {
+			NOT = {
+				has_law_or_variant = law_type:law_slavery_banned
+			}
+		}
+		start_enactment = law_type:law_slavery_banned
+		add_enactment_phase = 3
+	}
+}
+
+# In the country's least-primary-culture state (below 3% primary culture),
+# kills a slice of the largest discriminated non-primary pop. Country scope.
+state_kill_non_primary_pops = {
+	ordered_scope_state = {
+		check_range_bounds = no
+		order_by = primary_cultures_percent_state
+		position = 9999
+		limit = {
+			primary_cultures_percent_state < 0.03
+		}
+		ordered_scope_pop = {
+			check_range_bounds = no
+			order_by = total_size
+			position = 0
+			limit = {
+				NOR = {
+					culture = {
+						is_primary_culture_of = root
+					}
+					strata = upper
+				}
+				has_state_religion = no
+			}
+			prev = {
+				kill_population_percent_in_state = {
+					percent = 0.03
+					culture = prev.culture
+				}
+			}
+		}
+	}
+}
+
+# Like state_kill_non_primary_pops, but additionally moves a slice of primary-
+# culture lower-strata pops from the country's lowest-unemployment state into
+# the purged state. Country scope.
+state_replace_foreign_pops_with_primary_pops = {
+	ordered_scope_state = {
+		check_range_bounds = no
+		order_by = primary_cultures_percent_state
+		position = 9999
+		limit = {
+			primary_cultures_percent_state < 0.03
+		}
+		ordered_scope_pop = {
+			check_range_bounds = no
+			order_by = total_size
+			position = 0
+			limit = {
+				NOR = {
+					culture = {
+						is_primary_culture_of = root
+					}
+					strata = upper
+				}
+				has_state_religion = no
+			}
+			prev = {
+				kill_population_percent_in_state = {
+					percent = 0.03
+					culture = prev.culture
+				}
+			}
+		}
+		save_scope_as = target_state
+	}
+	ordered_scope_state = {
+		check_range_bounds = no
+		order_by = state_unemployment_rate
+		position = 0
+		limit = {
+			any_scope_pop = {
+				strata = lower
+				culture = { is_primary_culture_of = root }
+				has_state_religion = yes
+			}
+		}
+		save_scope_as = source_state
+	}
+	scope:source_state = {
+		ordered_scope_pop = {
+			check_range_bounds = no
+			limit = {
+				strata = lower
+				culture = { is_primary_culture_of = root }
+				has_state_religion = yes
+			}
+			order_by = total_size
+			position = 0
+			move_partial_pop = {
+				state = scope:target_state
+				population_ratio = 0.03
+			}
+		}
+	}
+}
