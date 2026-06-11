@@ -5,20 +5,20 @@ A small dependency mod that provides a single, shared set of scripted triggers a
 [h2]What it provides[/h2]
 
 [list]
-[*][b]Geography triggers[/b] — continent / world-region checks at state and country level: Europe, North America, Central America, South America, the Americas, Africa, the Middle East, Central Asia, India, East Asia, China and Southeast Asia. State-level triggers test the state's region; country-level triggers test the country's capital.
+[*][b]Geography triggers[/b] — continent / world-region checks at state and country level: Europe, North America, Central America, South America, Africa, the Middle East, Central Asia, India, East Asia, China and Southeast Asia, plus a combined state-level Americas check. State-level triggers test the state's region; country-level triggers test the country's capital.
 [*][b]Religion triggers[/b] — heritage checks: Christian, Jewish, Muslim, and Abrahamic-non-Mohammedan, plus the nation-level Jewish and Judeo-Christian checks.
-[*][b]Government & politics triggers[/b] — recognised country, republic and monarchy/anarchy shapes, fascist-government detection, welfare-state-with-low-legitimacy, ideology-availability (Fascism / Communism / Anarchism), and free-speech / multiculturalism law stances.
-[*][b]State & demographic triggers[/b] — occupation checks, agitator alignment (left-wing / right-wing), and mass-migration source eligibility.
-[*][b]Coat-of-arms triggers[/b] — government-shape checks for dynamic coat-of-arms definitions: monarchy, democratic republic and undemocratic republic, each with the [code]coa_def_*[/code] actor-scope wrapper used by coat-of-arms files.
-[*][b]Country effects[/b] — a bulk effect that strips every economy building (industry, agriculture, mines, plantations, resources, power plants, ports and railways) from all states of a country, random Governance Principle / Distribution of Power assignment, decentralizing every country beyond the top 200 by prestige, exiling a country's least popular agitator, and pop-surgery helpers that kill or replace non-primary-culture pops.
+[*][b]Government & politics triggers[/b] — recognised country, non-leftist republic, the combined monarchy-plus-anarchy "monanarchy" shape, fascist-government detection, welfare-state-with-low-legitimacy, ideology-availability (Fascism / Communism / Anarchism, by prerequisite technology), and free-speech / multiculturalism law stances.
+[*][b]State & demographic triggers[/b] — occupation checks (occupied at all, or occupied by ROOT), agitator alignment (left-wing / right-wing), and mass-migration source eligibility.
+[*][b]Coat-of-arms triggers[/b] — government-shape checks for dynamic coat-of-arms definitions: democratic republic and undemocratic republic, each as a plain country-scope trigger plus the [code]coa_def_[i][/code] actor-scope wrapper used by coat-of-arms files, and a [code]coa_def_[/i][/code] wrapper around vanilla's monarchy check.
+[*][b]Country effects[/b] — a bulk effect that strips every economy building (industry, agriculture, mines, plantations, resources, power plants, ports and railways) from all states of a country, random Governance Principle / Distribution of Power assignment, decentralizing every country beyond the top 200 by prestige, exiling a country's least popular agitator, and pop-surgery helpers that kill or replace non-primary-culture pops (the country-wide variant also starts enacting Slavery Banned where slavery is still legal).
 [*][b]State effects[/b] — tagging a state region with a state trait if missing (idempotent, parameterized), and killing the non-primary-culture pops of a single state.
 [*][b]Dynamic naming effects[/b] — parameterized building blocks for culture-based state and hub renaming (coastal / inland / hubs-only layouts, plus keep-vanilla variants for states vanilla already renames for other languages). A consuming mod supplies its own state dispatcher, language trait, localization keys and on_action hooks; the vanilla [code]no_dynamic_naming[/code] game rule is honoured.
 [/list]
 
 [h2]Using it as a dependency[/h2]
 
-This mod does nothing on its own — it is meant to be loaded underneath the mods that depend on it. A mod that uses these triggers must declare the dependency in its [code].metadata/metadata.json[/code] and list this mod as a required item on its Steam Workshop page.
+This mod does nothing on its own — it is meant to be loaded underneath the mods that depend on it. A mod that uses these triggers and effects must declare the dependency in its [code].metadata/metadata.json[/code] and list this mod as a required item on its Steam Workshop page.
 
 [h2]Compatibility[/h2]
 
-The triggers depend only on vanilla content — state regions [code]sr:region_*[/code], discrimination heritage traits, laws, technologies, institutions and country types — so the library tracks vanilla and carries no gameplay content of its own.
+Everything here depends only on vanilla content — state regions [code]sr:region_*[/code], discrimination traits, laws, technologies, institutions, country types, buildings, the [code]no_dynamic_naming[/code] game rule and vanilla's coat-of-arms triggers — so the library tracks vanilla (currently game version 1.13) and carries no gameplay content of its own.
