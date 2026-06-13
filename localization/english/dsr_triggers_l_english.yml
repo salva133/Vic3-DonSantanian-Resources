@@ -38,6 +38,8 @@
  # Law stance
  reactionary_stance_on_free_speech_desc:"Holds a reactionary stance on free speech"
  liberal_stance_on_free_speech_desc:"Holds a liberal stance on free speech"
+ reactionary_stance_on_secret_police_desc:"Holds a reactionary stance on secret police"
+ liberal_stance_on_secret_police_desc:"Holds a liberal stance on secret police"
  staunch_multiculturalist_desc:"Is a staunch multiculturalist"
  # Migration
  country_eligible_as_mass_migration_source_country_desc:"Is eligible as a mass-migration source"
