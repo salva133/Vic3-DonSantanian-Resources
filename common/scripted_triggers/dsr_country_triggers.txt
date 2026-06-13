@@ -165,28 +165,6 @@ liberal_stance_on_free_speech = {
 	}
 }
 
-reactionary_stance_on_home_affairs = {
-	custom_description = {
-		text = reactionary_stance_on_home_affairs_desc
-		subject = this
-		law_stance = {
-			law = law_type:law_secret_police
-			value > neutral
-		}
-	}
-}
-
-liberal_stance_on_home_affairs = {
-	custom_description = {
-		text = liberal_stance_on_home_affairs_desc
-		subject = this
-		law_stance = {
-			law = law_type:law_secret_police
-			value < neutral
-		}
-	}
-}
-
 staunch_multiculturalist = {
 	custom_description = {
 		text = staunch_multiculturalist_desc
