@@ -34,3 +34,17 @@ state_kill_all_non_primary_pops = {
 		}
 	}
 }
+
+# Kills every pop in the state in scope that sits at the lowest acceptance tier
+# (acceptance status 1, i.e. pop_acceptance below the status-2 threshold).
+# State-scoped: call it on the state you want purged of its least-accepted pops.
+state_kill_acceptance_1_pops = {
+	every_scope_pop = {
+		limit = {
+			pop_acceptance < acceptance_status_2
+		}
+		kill_population_percent = {
+			percent = 1
+		}
+	}
+}
