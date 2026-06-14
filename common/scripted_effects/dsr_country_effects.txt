@@ -280,3 +280,262 @@ state_replace_foreign_pops_with_primary_pops = {
 		}
 	}
 }
+
+### Post-collapse helpers (generic, vanilla-only)
+
+# Strips every military and heavy-industry building from each state of the country
+# in scope: barracks, all naval buildings, the chemical/synthetics/steel plants,
+# power plants, the motor/automotive/electrics industries and munition plants.
+deindustrialize_country = {
+	every_scope_state = {
+		if = {
+			limit = { has_building = building_barrack }
+			remove_building = building_barrack
+		}
+		if = {
+			limit = { has_building = building_naval_fortification }
+			remove_building = building_naval_fortification
+		}
+		if = {
+			limit = { has_building = building_naval_administration }
+			remove_building = building_naval_administration
+		}
+		if = {
+			limit = { has_building = building_naval_logistics_center }
+			remove_building = building_naval_logistics_center
+		}
+		if = {
+			limit = { has_building = building_chemical_plant }
+			remove_building = building_chemical_plant
+		}
+		if = {
+			limit = { has_building = building_synthetics_plant }
+			remove_building = building_synthetics_plant
+		}
+		if = {
+			limit = { has_building = building_steel_mill }
+			remove_building = building_steel_mill
+		}
+		if = {
+			limit = { has_building = building_power_plant }
+			remove_building = building_power_plant
+		}
+		if = {
+			limit = { has_building = building_motor_industry }
+			remove_building = building_motor_industry
+		}
+		if = {
+			limit = { has_building = building_automotive_industry }
+			remove_building = building_automotive_industry
+		}
+		if = {
+			limit = { has_building = building_electrics_industry }
+			remove_building = building_electrics_industry
+		}
+		if = {
+			limit = { has_building = building_munition_plant }
+			remove_building = building_munition_plant
+		}
+	}
+}
+
+# Caps pop literacy at 20% across the country in scope, with academics and
+# engineers retained at 60%. Models a literacy collapse.
+collapse_pop_literacy = {
+	every_scope_pop = {
+		limit = { literacy_rate > 0.2 }
+		set_pop_literacy = {
+			literacy_rate = {
+				value = 0.2
+				if = {
+					limit = {
+						OR = {
+							is_pop_type = academics
+							is_pop_type = engineers
+						}
+					}
+					add = 0.4
+				}
+			}
+		}
+	}
+}
+
+# Base-game religion/culture -> Devout IG name mapping, mirrored from common/interest_groups/00_devout.txt
+# (names only; the base-game ideology assignments stay with the base game's own on_enable). Restores the
+# proper default Devout name once the Spartan Clericate override is lifted, falling back to the
+# generic Devout name for religions the base game does not map. Country scope.
+set_default_devout_ig_name = {
+	if = {
+		limit = {
+			country_has_state_religion = rel:mahayana
+			country_has_primary_culture = cu:japanese
+		}
+		ig:ig_devout ?= { set_interest_group_name = ig_jisha }
+	}
+	else_if = {
+		limit = {
+			country_has_state_religion = rel:shinto
+			country_has_primary_culture = cu:japanese
+		}
+		ig:ig_devout ?= { set_interest_group_name = ig_shinto_monks }
+	}
+	else_if = {
+		limit = {
+			country_has_state_religion = rel:protestant
+			country_has_primary_culture = cu:hawaiian
+		}
+		ig:ig_devout ?= { set_interest_group_name = ig_christian_missionaries }
+	}
+	else_if = {
+		limit = {
+			country_has_state_religion = rel:protestant
+			OR = {
+				c:WBL ?= this
+				c:PHL ?= this
+			}
+		}
+		ig:ig_devout ?= { set_interest_group_name = ig_london_missionary_society }
+	}
+	else_if = {
+		limit = {
+			country_has_state_religion = rel:protestant
+			OR = {
+				country_has_primary_culture = cu:maori
+				country_has_primary_culture = cu:australian
+				country_has_primary_culture = cu:anglo_canadian
+				country_has_primary_culture = cu:british
+				country_has_primary_culture = cu:irish
+				c:NRU ?= this
+			}
+			NOT = { c:BIC ?= this }
+		}
+		ig:ig_devout ?= { set_interest_group_name = ig_anglican_church }
+	}
+	else_if = {
+		limit = {
+			country_has_state_religion = rel:orthodox
+			OR = {
+				country_has_primary_culture = cu:russian
+				country_has_primary_culture = cu:byelorussian
+				country_has_primary_culture = cu:ukrainian
+			}
+		}
+		ig:ig_devout ?= { set_interest_group_name = ig_orthodox_church }
+	}
+	else_if = {
+		limit = {
+			country_has_state_religion = rel:protestant
+			country_has_primary_culture = cu:danish
+		}
+		ig:ig_devout ?= { set_interest_group_name = ig_church_of_denmark }
+	}
+	else_if = {
+		limit = {
+			country_has_state_religion = rel:protestant
+			country_has_primary_culture = cu:norwegian
+		}
+		ig:ig_devout ?= { set_interest_group_name = ig_church_of_norway }
+	}
+	else_if = {
+		limit = {
+			country_has_state_religion = rel:protestant
+			country_has_primary_culture = cu:finnish
+		}
+		ig:ig_devout ?= { set_interest_group_name = ig_church_of_finland }
+	}
+	else_if = {
+		limit = {
+			country_has_state_religion = rel:protestant
+			country_has_primary_culture = cu:swedish
+		}
+		ig:ig_devout ?= { set_interest_group_name = ig_church_of_sweden }
+	}
+	else_if = {
+		limit = { country_has_state_religion = rel:confucian }
+		ig:ig_devout ?= { set_interest_group_name = ig_confucian }
+	}
+	else_if = {
+		limit = {
+			country_has_state_religion = rel:protestant
+			OR = {
+				country_has_primary_culture = cu:yankee
+				country_has_primary_culture = cu:dixie
+				country_has_primary_culture = cu:afro_american
+				country_has_primary_culture = cu:cherokee
+			}
+		}
+		ig:ig_devout ?= { set_interest_group_name = ig_evangelicals }
+	}
+	else_if = {
+		limit = { c:PAP ?= this }
+		ig:ig_devout ?= { set_interest_group_name = ig_roman_curia }
+	}
+	else_if = {
+		limit = { country_has_state_religion = rel:catholic }
+		ig:ig_devout ?= { set_interest_group_name = ig_catholic_church }
+	}
+	else_if = {
+		limit = {
+			country_has_state_religion = rel:protestant
+			NOT = { c:BIC ?= this }
+		}
+		ig:ig_devout ?= { set_interest_group_name = ig_evangelical_church }
+	}
+	else_if = {
+		limit = {
+			OR = {
+				country_has_state_religion = rel:sunni
+				c:ZAN ?= this
+			}
+		}
+		ig:ig_devout ?= { set_interest_group_name = ig_sunni_madrasahs }
+	}
+	else_if = {
+		limit = { country_has_state_religion = rel:shiite }
+		ig:ig_devout ?= { set_interest_group_name = ig_shia_madrasahs }
+	}
+	else_if = {
+		limit = {
+			country_has_state_religion = rel:ibadi
+			NOT = { c:ZAN ?= this }
+		}
+		ig:ig_devout ?= { set_interest_group_name = ig_ibadi_madrasahs }
+	}
+	else_if = {
+		limit = { country_has_state_religion = rel:oriental_orthodox }
+		ig:ig_devout ?= { set_interest_group_name = ig_oriental_orthodox_church }
+	}
+	else_if = {
+		limit = { country_has_state_religion = rel:orthodox }
+		ig:ig_devout ?= { set_interest_group_name = ig_orthodox_church }
+	}
+	else_if = {
+		limit = {
+			OR = {
+				country_has_state_religion = rel:hindu
+				c:BIC ?= this
+			}
+		}
+		ig:ig_devout ?= { set_interest_group_name = ig_hindu_priesthood }
+	}
+	else_if = {
+		limit = { country_has_state_religion = rel:gelugpa }
+		ig:ig_devout ?= { set_interest_group_name = ig_vajrayana_monks }
+	}
+	else_if = {
+		limit = { country_has_state_religion = rel:theravada }
+		ig:ig_devout ?= { set_interest_group_name = ig_theravada_monks }
+	}
+	else_if = {
+		limit = { country_has_state_religion = rel:mahayana }
+		ig:ig_devout ?= { set_interest_group_name = ig_mahayana_monks }
+	}
+	else_if = {
+		limit = { country_has_state_religion = rel:sikh }
+		ig:ig_devout ?= { set_interest_group_name = ig_granthis }
+	}
+	else = {
+		ig:ig_devout ?= { set_interest_group_name = ig_devout }
+	}
+}
