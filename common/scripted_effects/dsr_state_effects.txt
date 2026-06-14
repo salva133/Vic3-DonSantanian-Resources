@@ -44,7 +44,7 @@ state_kill_acceptance_1_pops = {
 			pop_acceptance < acceptance_status_2
 		}
 		kill_population_percent = {
-			percent = 1
+			percent = 0.1
 		}
 	}
 }
