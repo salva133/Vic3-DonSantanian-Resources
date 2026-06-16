@@ -184,15 +184,14 @@ country_kill_all_non_primary_pops_in_all_states = {
 	}
 }
 
-# In the country's least-primary-culture state (below 3% primary culture),
-# kills a slice of the largest discriminated non-primary pop. Country scope.
+# Kills a slice of the largest discriminated non-primary pop. Country scope.
 state_kill_non_primary_pops = {
 	ordered_scope_state = {
 		check_range_bounds = no
 		order_by = primary_cultures_percent_state
 		position = 9999
 		limit = {
-			primary_cultures_percent_state < 0.03
+			primary_cultures_percent_state < 0.75
 		}
 		ordered_scope_pop = {
 			check_range_bounds = no
@@ -209,73 +208,9 @@ state_kill_non_primary_pops = {
 			}
 			prev = {
 				kill_population_percent_in_state = {
-					percent = 0.03
+					percent = 0.1
 					culture = prev.culture
 				}
-			}
-		}
-	}
-}
-
-# Like state_kill_non_primary_pops, but additionally moves a slice of primary-
-# culture lower-strata pops from the country's lowest-unemployment state into
-# the purged state. Country scope.
-state_replace_foreign_pops_with_primary_pops = {
-	ordered_scope_state = {
-		check_range_bounds = no
-		order_by = primary_cultures_percent_state
-		position = 9999
-		limit = {
-			primary_cultures_percent_state < 0.03
-		}
-		ordered_scope_pop = {
-			check_range_bounds = no
-			order_by = total_size
-			position = 0
-			limit = {
-				NOR = {
-					culture = {
-						is_primary_culture_of = root
-					}
-					strata = upper
-				}
-				has_state_religion = no
-			}
-			prev = {
-				kill_population_percent_in_state = {
-					percent = 0.03
-					culture = prev.culture
-				}
-			}
-		}
-		save_scope_as = target_state
-	}
-	ordered_scope_state = {
-		check_range_bounds = no
-		order_by = state_unemployment_rate
-		position = 0
-		limit = {
-			any_scope_pop = {
-				strata = lower
-				culture = { is_primary_culture_of = root }
-				has_state_religion = yes
-			}
-		}
-		save_scope_as = source_state
-	}
-	scope:source_state = {
-		ordered_scope_pop = {
-			check_range_bounds = no
-			limit = {
-				strata = lower
-				culture = { is_primary_culture_of = root }
-				has_state_religion = yes
-			}
-			order_by = total_size
-			position = 0
-			move_partial_pop = {
-				state = scope:target_state
-				population_ratio = 0.03
 			}
 		}
 	}
