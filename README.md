@@ -96,12 +96,18 @@ Government-shape checks for dynamic coat-of-arms definitions. The plain variants
 - **`country_kill_all_non_primary_pops_in_all_states`** — kills 99% of every non-primary-culture pop in every state, then starts enacting Slavery Banned if slavery is still legal.
 - **`collapse_pop_literacy`** — models a literacy collapse, capping pop literacy at 20% across the country, with academics and engineers retained at 60%.
 - **`set_default_devout_ig_name`** — restores the base-game default Devout interest-group name from vanilla's religion / culture mapping (e.g. Orthodox Church, Sunni Madrasahs, Anglican Church), falling back to the generic Devout name. Useful for cleanly lifting a custom Devout-name override.
+- **`set_up_islamic_gov`** — applies a backward Islamic-monarchy law preset (autocratic monarchy, national supremacy, People of the Book, serfdom, debt slavery, no workers' / women's rights and so on) to the country in scope and installs the Landowners' interest-group leader as ruler. Every law is vanilla.
+
+### Character effects (`dsr_character_effects.txt`)
+
+- **`set_all_politicians_ideology`** — sets every politician in the country who does not already hold the given ideology to it. Parameterized (`IDEOLOGY`); the body is vanilla-only, so the caller may pass any vanilla or mod-defined ideology key.
 
 ### State effects (`dsr_state_effects.txt`)
 
 - **`add_state_trait_to_region_if_missing`** — parameterized (`STATE`, `TRAIT`) macro that tags a state region with a state trait only when none of its states already carry it. Idempotent, so it is safe to call repeatedly (e.g. from `on_game_started`).
 - **`state_kill_all_non_primary_pops`** — kills 99% of every pop in the state whose culture is not a primary culture of the state's root country.
 - **`state_kill_acceptance_1_pops`** — kills 10% of the pops of every culture sitting at the lowest acceptance tier (below the status-2 threshold) in the state's root country.
+- **`state_gather_all_pops_of_religion`** — moves every pop of a given religion (`RELIGION`) from every state in the world into the state in scope. Called on the destination state; wrap it in a `custom_tooltip` at the call site to replace the per-pop tooltip with a single flavour line.
 
 ### Dynamic naming effects (`dsr_dynamic_naming_effects.txt`)
 

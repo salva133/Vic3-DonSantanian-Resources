@@ -1,0 +1,15 @@
+﻿### Politician helpers
+
+# Sets every politician in the country in scope that does not already hold
+# $IDEOLOGY$ to $IDEOLOGY$. The body references only the parameter, so the
+# caller may pass any vanilla or mod-defined ideology key. Country scope.
+# IDEOLOGY = ideology key without the ideology: prefix
+set_all_politicians_ideology = {
+	every_scope_character = {
+		limit = {
+			has_role_of_type = politician
+			NOT = { has_ideology = ideology:$IDEOLOGY$ }
+		}
+		set_ideology = ideology:$IDEOLOGY$
+	}
+}

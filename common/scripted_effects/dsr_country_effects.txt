@@ -442,3 +442,38 @@ set_default_devout_ig_name = {
 		ig:ig_devout ?= { set_interest_group_name = ig_devout }
 	}
 }
+
+### Government law presets
+
+# Applies a backward Islamic-monarchy law preset to the country in scope:
+# autocratic monarchy, national supremacy, People of the Book, hereditary
+# bureaucrats, peasant levies, serfdom, debt slavery, traditionalism,
+# mercantilism, religious schools, local police, charitable health system, and
+# no workers' / women's rights, no social security and no home affairs. Installs
+# the Landowners' interest-group leader as ruler. All laws are vanilla. Country scope.
+set_up_islamic_gov = {
+	activate_law = law_type:law_monarchy
+	activate_law = law_type:law_autocracy
+	activate_law = law_type:law_national_supremacy
+	activate_law = law_type:law_people_of_the_book
+	activate_law = law_type:law_hereditary_bureaucrats
+	activate_law = law_type:law_peasant_levies
+	activate_law = law_type:law_no_home_affairs
+	activate_law = law_type:law_traditionalism
+	activate_law = law_type:law_mercantilism
+	activate_law = law_type:law_serfdom
+	activate_law = law_type:law_local_police
+	activate_law = law_type:law_religious_schools
+	activate_law = law_type:law_charitable_health_system
+	activate_law = law_type:law_no_workers_rights
+	activate_law = law_type:law_child_labor_allowed
+	activate_law = law_type:law_no_womens_rights
+	activate_law = law_type:law_no_social_security
+	activate_law = law_type:law_no_migration_controls
+	activate_law = law_type:law_debt_slavery
+	ig:ig_landowners ?= {
+		leader = {
+			set_character_as_ruler = yes
+		}
+	}
+}

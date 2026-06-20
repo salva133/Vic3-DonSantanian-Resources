@@ -59,3 +59,27 @@ state_kill_acceptance_1_pops = {
 		}
 	}
 }
+
+### Pop consolidation
+
+# Moves every pop of religion $RELIGION$ from every state in the world into the
+# state in ROOT scope. Call from a state scope; ROOT is the destination state.
+# Wrap the call in a custom_tooltip at the call site to replace the generated
+# per-pop tooltip with a single line.
+# ROOT     = destination state
+# RELIGION = religion key without the rel: prefix, e.g. jewish
+state_gather_all_pops_of_religion = {
+	every_state = {
+		limit = {
+			any_scope_pop = {
+				has_pop_religion = $RELIGION$
+			}
+		}
+		every_scope_pop = {
+			limit = {
+				has_pop_religion = $RELIGION$
+			}
+			move_pop = root
+		}
+	}
+}
