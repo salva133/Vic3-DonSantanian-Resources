@@ -34,6 +34,7 @@
 
 # Gate on the vanilla no_dynamic_naming game rule, then hand over to the
 # consuming mod's dispatcher. State scope.
+# Example: s:STATE_NORMANDY = { evaluate_and_assign_state_hub_names = { ASSIGN_EFFECT = my_state_name_dispatcher } }
 evaluate_and_assign_state_hub_names = {
 	if = {
 		limit = { has_game_rule = no_dynamic_naming }
@@ -46,6 +47,7 @@ evaluate_and_assign_state_hub_names = {
 }
 
 # Coastal states: state name + city / port / mine / farm / wood hubs.
+# Example: assign_culture_state_hub_names_coastal = { STATE = STATE_NORMANDY TRAIT = language_germanophone SUFFIX = german }
 assign_culture_state_hub_names_coastal = {
 	if = {
 		limit = {
@@ -70,6 +72,7 @@ assign_culture_state_hub_names_coastal = {
 }
 
 # Inland states: state name + city / mine / farm / wood hubs (no port).
+# Example: assign_culture_state_hub_names_inland = { STATE = STATE_NORMANDY TRAIT = language_germanophone SUFFIX = german }
 assign_culture_state_hub_names_inland = {
 	if = {
 		limit = {
@@ -93,6 +96,7 @@ assign_culture_state_hub_names_inland = {
 
 # Hubs-only states: mine / farm / wood hubs only; the state name and city hub
 # stay untouched while the owner has the trait.
+# Example: assign_culture_state_hub_names_hubs_only = { STATE = STATE_NORMANDY TRAIT = language_germanophone SUFFIX = german }
 assign_culture_state_hub_names_hubs_only = {
 	if = {
 		limit = {
@@ -116,6 +120,7 @@ assign_culture_state_hub_names_hubs_only = {
 # branches for other languages. Sets names when the owner has TRAIT; resets
 # ONLY when VANILLA_NAMES_TRIGGER is false for the owner, so vanilla's
 # competing branches keep working for the languages they cover.
+# Example: assign_culture_state_hub_names_coastal_keep_vanilla = { STATE = STATE_NORMANDY TRAIT = language_germanophone SUFFIX = german VANILLA_NAMES_TRIGGER = my_vanilla_names_trigger }
 assign_culture_state_hub_names_coastal_keep_vanilla = {
 	if = {
 		limit = {
@@ -145,6 +150,7 @@ assign_culture_state_hub_names_coastal_keep_vanilla = {
 	}
 }
 
+# Example: assign_culture_state_hub_names_inland_keep_vanilla = { STATE = STATE_NORMANDY TRAIT = language_germanophone SUFFIX = german VANILLA_NAMES_TRIGGER = my_vanilla_names_trigger }
 assign_culture_state_hub_names_inland_keep_vanilla = {
 	if = {
 		limit = {

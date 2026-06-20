@@ -4,6 +4,7 @@
 # $IDEOLOGY$ to $IDEOLOGY$. The body references only the parameter, so the
 # caller may pass any vanilla or mod-defined ideology key. Country scope.
 # IDEOLOGY = ideology key without the ideology: prefix
+# Example: ROOT = { set_all_politicians_ideology = { IDEOLOGY = ideology_fascist } }
 set_all_politicians_ideology = {
 	every_scope_character = {
 		limit = {

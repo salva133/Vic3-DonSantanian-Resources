@@ -96,7 +96,7 @@ Government-shape checks for dynamic coat-of-arms definitions. The plain variants
 - **`country_kill_all_non_primary_pops_in_all_states`** — kills 99% of every non-primary-culture pop in every state, then starts enacting Slavery Banned if slavery is still legal.
 - **`collapse_pop_literacy`** — models a literacy collapse, capping pop literacy at 20% across the country, with academics and engineers retained at 60%.
 - **`set_default_devout_ig_name`** — restores the base-game default Devout interest-group name from vanilla's religion / culture mapping (e.g. Orthodox Church, Sunni Madrasahs, Anglican Church), falling back to the generic Devout name. Useful for cleanly lifting a custom Devout-name override.
-- **`set_up_islamic_gov`** — applies a backward Islamic-monarchy law preset (autocratic monarchy, national supremacy, People of the Book, serfdom, debt slavery, no workers' / women's rights and so on) to the country in scope and installs the Landowners' interest-group leader as ruler. Every law is vanilla.
+- **`set_up_islamic_gov`** — applies an Islamic-monarchy law preset (autocratic monarchy, national supremacy, People of the Book, serfdom, debt slavery, no workers' / women's rights and so on) to the country in scope and installs the Landowners' interest-group leader as ruler. Every law is vanilla.
 
 ### Character effects (`dsr_character_effects.txt`)
 

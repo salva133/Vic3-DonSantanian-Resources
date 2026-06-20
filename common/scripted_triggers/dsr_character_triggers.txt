@@ -1,4 +1,5 @@
 ﻿### Agitator alignment triggers
+# Example: any_scope_character = { is_leftist_agitator = yes }
 is_leftist_agitator = {
 	custom_description = {
 		text = is_leftist_agitator_desc
@@ -11,6 +12,7 @@ is_leftist_agitator = {
 	}
 }
 
+# Example: any_scope_character = { is_right_wing_agitator = yes }
 is_right_wing_agitator = {
 	custom_description = {
 		text = is_right_wing_agitator_desc

@@ -1,4 +1,5 @@
 ﻿### State geography triggers
+# Example: any_scope_state = { state_is_in_europe = yes }
 state_is_in_europe = {
 	custom_description = {
 		text = state_is_in_europe_desc
@@ -15,6 +16,7 @@ state_is_in_europe = {
 	}
 }
 
+# Example: any_scope_state = { state_is_in_north_america = yes }
 state_is_in_north_america = {
 	custom_description = {
 		text = state_is_in_north_america_desc
@@ -28,6 +30,7 @@ state_is_in_north_america = {
 	}
 }
 
+# Example: any_scope_state = { state_is_in_central_america = yes }
 state_is_in_central_america = {
 	custom_description = {
 		text = state_is_in_central_america_desc
@@ -36,6 +39,7 @@ state_is_in_central_america = {
 	}
 }
 
+# Example: any_scope_state = { state_is_in_south_america = yes }
 state_is_in_south_america = {
 	custom_description = {
 		text = state_is_in_south_america_desc
@@ -49,6 +53,7 @@ state_is_in_south_america = {
 	}
 }
 
+# Example: any_scope_state = { state_is_in_americas = yes }
 state_is_in_americas = {
 	custom_description = {
 		text = state_is_in_americas_desc
@@ -61,6 +66,7 @@ state_is_in_americas = {
 	}
 }
 
+# Example: any_scope_state = { state_is_in_africa = yes }
 state_is_in_africa = {
 	custom_description = {
 		text = state_is_in_africa_desc
@@ -76,6 +82,7 @@ state_is_in_africa = {
 	}
 }
 
+# Example: any_scope_state = { state_is_in_middle_east = yes }
 state_is_in_middle_east = {
 	custom_description = {
 		text = state_is_in_middle_east_desc
@@ -88,6 +95,7 @@ state_is_in_middle_east = {
 	}
 }
 
+# Example: any_scope_state = { state_is_in_central_asia = yes }
 state_is_in_central_asia = {
 	custom_description = {
 		text = state_is_in_central_asia_desc
@@ -99,6 +107,7 @@ state_is_in_central_asia = {
 	}
 }
 
+# Example: any_scope_state = { state_is_in_india = yes }
 state_is_in_india = {
 	custom_description = {
 		text = state_is_in_india_desc
@@ -110,6 +119,7 @@ state_is_in_india = {
 	}
 }
 
+# Example: any_scope_state = { state_is_in_east_asia = yes }
 state_is_in_east_asia = {
 	custom_description = {
 		text = state_is_in_east_asia_desc
@@ -123,6 +133,7 @@ state_is_in_east_asia = {
 	}
 }
 
+# Example: any_scope_state = { state_is_in_china = yes }
 state_is_in_china = {
 	custom_description = {
 		text = state_is_in_china_desc
@@ -135,6 +146,7 @@ state_is_in_china = {
 	}
 }
 
+# Example: any_scope_state = { state_is_in_southeast_asia = yes }
 state_is_in_southeast_asia = {
 	custom_description = {
 		text = state_is_in_southeast_asia_desc
@@ -149,6 +161,7 @@ state_is_in_southeast_asia = {
 ### Country geography triggers
 # exists = capital checks are necessary only because we may test these triggers and scope switch to capitals before states are initialized properly
 
+# Example: c:CHI = { country_is_in_china = yes }
 country_is_in_china = {
 	custom_description = {
 		text = country_is_in_china_desc
@@ -160,6 +173,7 @@ country_is_in_china = {
 	}
 }
 
+# Example: c:FRA = { country_is_in_europe = yes }
 country_is_in_europe = {
 	custom_description = {
 		text = country_is_in_europe_desc
@@ -171,6 +185,7 @@ country_is_in_europe = {
 	}
 }
 
+# Example: c:USA = { country_is_in_north_america = yes }
 country_is_in_north_america = {
 	custom_description = {
 		text = country_is_in_north_america_desc
@@ -182,6 +197,7 @@ country_is_in_north_america = {
 	}
 }
 
+# Example: c:MEX = { country_is_in_central_america = yes }
 country_is_in_central_america = {
 	custom_description = {
 		text = country_is_in_central_america_desc
@@ -193,6 +209,7 @@ country_is_in_central_america = {
 	}
 }
 
+# Example: c:BRZ = { country_is_in_south_america = yes }
 country_is_in_south_america = {
 	custom_description = {
 		text = country_is_in_south_america_desc
@@ -204,6 +221,7 @@ country_is_in_south_america = {
 	}
 }
 
+# Example: c:ETH = { country_is_in_africa = yes }
 country_is_in_africa = {
 	custom_description = {
 		text = country_is_in_africa_desc
@@ -215,6 +233,7 @@ country_is_in_africa = {
 	}
 }
 
+# Example: c:PER = { country_is_in_middle_east = yes }
 country_is_in_middle_east = {
 	custom_description = {
 		text = country_is_in_middle_east_desc
@@ -226,6 +245,7 @@ country_is_in_middle_east = {
 	}
 }
 
+# Example: c:BUK = { country_is_in_central_asia = yes }
 country_is_in_central_asia = {
 	custom_description = {
 		text = country_is_in_central_asia_desc
@@ -237,6 +257,7 @@ country_is_in_central_asia = {
 	}
 }
 
+# Example: c:HYD = { country_is_in_india = yes }
 country_is_in_india = {
 	custom_description = {
 		text = country_is_in_india_desc
@@ -247,6 +268,7 @@ country_is_in_india = {
 	}
 }
 
+# Example: c:JAP = { country_is_in_east_asia = yes }
 country_is_in_east_asia = {
 	custom_description = {
 		text = country_is_in_east_asia_desc
@@ -258,6 +280,7 @@ country_is_in_east_asia = {
 	}
 }
 
+# Example: c:SIA = { country_is_in_southeast_asia = yes }
 country_is_in_southeast_asia = {
 	custom_description = {
 		text = country_is_in_southeast_asia_desc
