@@ -20,7 +20,6 @@ add_state_trait_to_region_if_missing = {
 
 # Kills 99% of every pop in the state in scope whose culture is not a primary
 # culture of the state's root country.
-# Example: any_scope_state = { state_kill_all_non_primary_pops = yes }
 state_kill_all_non_primary_pops = {
 	every_scope_culture = {
 		limit = {
@@ -43,7 +42,6 @@ state_kill_all_non_primary_pops = {
 # Killing is done per-culture at the state level because kill_population_percent
 # is a country/state-scope effect, not a pop-scope one (looping pops and killing
 # in pop scope logs "Inconsistent effect scopes (pop vs. country)").
-# Example: any_scope_state = { state_kill_acceptance_1_pops = yes }
 state_kill_acceptance_1_pops = {
 	every_scope_culture = {
 		limit = {

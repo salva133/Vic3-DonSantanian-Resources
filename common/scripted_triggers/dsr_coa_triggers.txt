@@ -4,29 +4,24 @@
 # coa_*_trigger variants test the country in scope; the coa_def_* wrappers
 # test scope:actor as required by coat_of_arms definition files.
 
-# Example: trigger = { coa_def_monarchy_trigger = yes }  (inside a coat_of_arms definition)
 coa_def_monarchy_trigger = {
 	scope:actor ?= { coa_monarchy_trigger = yes }
 }
 
-# Example: ROOT = { coa_democratic_republic_trigger = yes }
 coa_democratic_republic_trigger = {
 	country_is_non_leftist_republic = yes
 	country_has_voting_franchise = yes
 }
 
-# Example: trigger = { coa_def_democratic_republic_trigger = yes }  (inside a coat_of_arms definition)
 coa_def_democratic_republic_trigger = {
 	scope:actor ?= { coa_democratic_republic_trigger = yes }
 }
 
-# Example: ROOT = { coa_undemocratic_republic_trigger = yes }
 coa_undemocratic_republic_trigger = {
 	country_is_non_leftist_republic = yes
 	country_has_voting_franchise = no
 }
 
-# Example: trigger = { coa_def_undemocratic_republic_trigger = yes }  (inside a coat_of_arms definition)
 coa_def_undemocratic_republic_trigger = {
 	scope:actor ?= { coa_undemocratic_republic_trigger = yes }
 }

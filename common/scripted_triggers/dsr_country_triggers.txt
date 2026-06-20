@@ -1,5 +1,4 @@
 ﻿### Country status triggers
-# Example: ROOT = { country_is_recognised = yes }
 country_is_recognised = {
 	custom_description = {
 		text = country_is_recognised_desc
@@ -13,7 +12,6 @@ country_is_recognised = {
 }
 
 ### Government-shape triggers
-# Example: ROOT = { country_is_non_leftist_republic = yes }
 country_is_non_leftist_republic = {
 	custom_description = {
 		text = country_is_non_leftist_republic_desc
@@ -26,7 +24,6 @@ country_is_non_leftist_republic = {
 	}
 }
 
-# Example: ROOT = { country_is_monanarchy = yes }
 country_is_monanarchy = {
 	custom_description = {
 		text = country_is_monanarchy_desc
@@ -41,7 +38,6 @@ country_is_monanarchy = {
 # an autocratic executive and a fascist coat of arms, or (2) a corporatist
 # autocracy that is not a Germanic ethnostate, not a non-ethnostate Austria, and
 # not a Hispanophone-cultured country (those read as other strains of fascism).
-# Example: any_country = { limit = { country_has_fascist_government_trigger = yes } }
 country_has_fascist_government_trigger = {
 	custom_description = {
 		text = country_has_fascist_government_trigger_desc
@@ -91,7 +87,6 @@ country_has_fascist_government_trigger = {
 	}
 }
 
-# Example: ROOT = { is_welfare_state_with_low_legitimacy = yes }
 is_welfare_state_with_low_legitimacy = {
 	custom_description = {
 		text = is_welfare_state_with_low_legitimacy_desc
@@ -111,7 +106,6 @@ is_welfare_state_with_low_legitimacy = {
 }
 
 ### Ideology-availability triggers (prerequisite technology researched)
-# Example: ROOT = { is_possible_ideology_fascist = yes }
 is_possible_ideology_fascist = {
 	custom_description = {
 		text = is_possible_ideology_fascist_desc
@@ -120,7 +114,6 @@ is_possible_ideology_fascist = {
 	}
 }
 
-# Example: ROOT = { is_possible_ideology_communist = yes }
 is_possible_ideology_communist = {
 	custom_description = {
 		text = is_possible_ideology_communist_desc
@@ -129,7 +122,6 @@ is_possible_ideology_communist = {
 	}
 }
 
-# Example: ROOT = { is_possible_ideology_anarchist = yes }
 is_possible_ideology_anarchist = {
 	custom_description = {
 		text = is_possible_ideology_anarchist_desc
@@ -139,7 +131,6 @@ is_possible_ideology_anarchist = {
 }
 
 ### Law-stance triggers
-# Example: ROOT = { reactionary_stance_on_free_speech = yes }
 reactionary_stance_on_free_speech = {
 	custom_description = {
 		text = reactionary_stance_on_free_speech_desc
@@ -157,7 +148,6 @@ reactionary_stance_on_free_speech = {
 	}
 }
 
-# Example: ROOT = { liberal_stance_on_free_speech = yes }
 liberal_stance_on_free_speech = {
 	custom_description = {
 		text = liberal_stance_on_free_speech_desc
@@ -175,7 +165,6 @@ liberal_stance_on_free_speech = {
 	}
 }
 
-# Example: ROOT = { staunch_multiculturalist = yes }
 staunch_multiculturalist = {
 	custom_description = {
 		text = staunch_multiculturalist_desc
@@ -188,7 +177,6 @@ staunch_multiculturalist = {
 }
 
 ### Migration triggers
-# Example: any_country = { limit = { country_eligible_as_mass_migration_source_country = yes } }
 country_eligible_as_mass_migration_source_country = {
 	custom_description = {
 		text = country_eligible_as_mass_migration_source_country_desc

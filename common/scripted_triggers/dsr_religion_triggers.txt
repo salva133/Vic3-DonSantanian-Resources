@@ -1,26 +1,22 @@
 ﻿### Religion heritage triggers
-# Example: ROOT = { is_christian = yes }
 is_christian = {
 	religion = {
 		has_discrimination_trait = heritage_christian
 	}
 }
 
-# Example: any_scope_pop = { is_jewish = yes }
 is_jewish = {
 	religion = {
 		has_discrimination_trait = heritage_jewish
 	}
 }
 
-# Example: ROOT = { is_muslim = yes }
 is_muslim = {
 	religion = {
 		has_discrimination_trait = heritage_islamic
 	}
 }
 
-# Example: ROOT = { is_abrahamic_non_mohammedan = yes }
 is_abrahamic_non_mohammedan = {
 	OR = {
 		is_christian = yes
@@ -29,7 +25,6 @@ is_abrahamic_non_mohammedan = {
 }
 
 ### Religion-nation triggers
-# Example: any_country = { limit = { country_is_jewish_nation = yes } }
 country_is_jewish_nation = {
 	custom_description = {
 		text = country_is_jewish_nation_desc
@@ -42,7 +37,6 @@ country_is_jewish_nation = {
 	}
 }
 
-# Example: ROOT = { country_is_a_judeo_christian_nation = yes }
 country_is_a_judeo_christian_nation = {
 	custom_description = {
 		text = country_is_a_judeo_christian_nation_desc

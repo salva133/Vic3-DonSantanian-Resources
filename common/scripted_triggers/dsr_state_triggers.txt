@@ -1,5 +1,4 @@
 ﻿### State control triggers
-# Example: any_scope_state = { state_is_occupied = yes }
 state_is_occupied = {
 	custom_description = {
 		text = state_is_occupied_desc
@@ -8,7 +7,6 @@ state_is_occupied = {
 	}
 }
 
-# Example: any_scope_state = { state_is_occupied_by_root = yes }
 state_is_occupied_by_root = {
 	custom_description = {
 		text = state_is_occupied_by_root_desc

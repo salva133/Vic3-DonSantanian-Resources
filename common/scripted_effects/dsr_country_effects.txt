@@ -6,7 +6,6 @@
 # Excluded: trade center, manor house, financial district and subsistence
 # buildings (auto-managed by the game), plus military, government,
 # monuments, canals, construction and company HQs.
-# Example: c:CHI = { remove_all_economy_buildings_from_country = yes }
 remove_all_economy_buildings_from_country = {
 	every_scope_state = {
 		# 01_industry
@@ -67,7 +66,6 @@ remove_all_economy_buildings_from_country = {
 ### Random law assignment
 
 # Randomly sets the Governance Principle. Country scope.
-# Example: ROOT = { set_random_governance_principle = yes }
 set_random_governance_principle = {
 	custom_tooltip = {
 		text = set_random_governance_principle_tt
@@ -83,7 +81,6 @@ set_random_governance_principle = {
 }
 
 # Randomly sets the Distribution of Power. Country scope.
-# Example: ROOT = { set_random_distribution_of_power = yes }
 set_random_distribution_of_power = {
 	custom_tooltip = {
 		text = set_random_distribution_of_power_tt
@@ -124,7 +121,6 @@ set_random_distribution_of_power = {
 # Turns every country beyond the top 200 by prestige into a decentralized
 # country. Callable from any scope; leaves the country_rank global variable
 # behind.
-# Example: decentralize_countries = yes
 decentralize_countries = {
 	set_global_variable = {
 		name = country_rank
@@ -151,7 +147,6 @@ decentralize_countries = {
 
 # Exiles the least popular agitator of the country in scope, saving them as
 # scope:exiled_character for follow-up script.
-# Example: ROOT = { exile_least_popular_agitator = yes }
 exile_least_popular_agitator = {
 	if = {
 		limit = {
@@ -174,7 +169,6 @@ exile_least_popular_agitator = {
 
 # Kills 99% of every non-primary-culture pop in every state of the country in
 # scope, then starts enacting Slavery Banned if slavery is still legal.
-# Example: ROOT = { country_kill_all_non_primary_pops_in_all_states = yes }
 country_kill_all_non_primary_pops_in_all_states = {
 	every_scope_state = {
 		state_kill_all_non_primary_pops = yes
@@ -195,7 +189,6 @@ country_kill_all_non_primary_pops_in_all_states = {
 # Strips every military and heavy-industry building from each state of the country
 # in scope: barracks, all naval buildings, the chemical/synthetics/steel plants,
 # power plants, the motor/automotive/electrics industries and munition plants.
-# Example: c:GER = { deindustrialize_country = yes }
 deindustrialize_country = {
 	every_scope_state = {
 		if = {
@@ -251,7 +244,6 @@ deindustrialize_country = {
 
 # Caps pop literacy at 20% across the country in scope, with academics and
 # engineers retained at 60%. Models a literacy collapse.
-# Example: ROOT = { collapse_pop_literacy = yes }
 collapse_pop_literacy = {
 	every_scope_pop = {
 		limit = { literacy_rate > 0.2 }
@@ -276,7 +268,6 @@ collapse_pop_literacy = {
 # (names only; the base-game ideology assignments stay with the base game's own on_enable). Restores the
 # proper default Devout name once the Spartan Clericate override is lifted, falling back to the
 # generic Devout name for religions the base game does not map. Country scope.
-# Example: ROOT = { set_default_devout_ig_name = yes }
 set_default_devout_ig_name = {
 	if = {
 		limit = {
@@ -460,7 +451,6 @@ set_default_devout_ig_name = {
 # mercantilism, religious schools, local police, charitable health system, and
 # no workers' / women's rights, no social security and no home affairs. Installs
 # the Landowners' interest-group leader as ruler. All laws are vanilla. Country scope.
-# Example: c:TUR = { set_up_islamic_gov = yes }
 set_up_islamic_gov = {
 	activate_law = law_type:law_monarchy
 	activate_law = law_type:law_autocracy
