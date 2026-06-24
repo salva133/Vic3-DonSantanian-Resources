@@ -12,6 +12,8 @@
  state_is_in_east_asia_desc:"Is in East Asia"
  state_is_in_china_desc:"Is in China"
  state_is_in_southeast_asia_desc:"Is in Southeast Asia"
+ state_is_in_indonesia_desc:"Is in Indonesia"
+ state_is_in_oceania_desc:"Is in Oceania"
  # Country-level geography (by capital)
  country_is_in_china_desc:"Capital is in China"
  country_is_in_europe_desc:"Capital is in Europe"
@@ -24,6 +26,8 @@
  country_is_in_india_desc:"Capital is in India"
  country_is_in_east_asia_desc:"Capital is in East Asia"
  country_is_in_southeast_asia_desc:"Capital is in Southeast Asia"
+ country_is_in_indonesia_desc:"Capital is in Indonesia"
+ country_is_in_oceania_desc:"Capital is in Oceania"
  # Country status
  country_is_recognised_desc:"Is a recognized country"
  # Government shape
