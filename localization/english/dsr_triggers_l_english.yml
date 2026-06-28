@@ -55,7 +55,7 @@
  country_is_jewish_nation_desc:"Is a Jewish nation"
  country_is_a_judeo_christian_nation_desc:"Is a Judeo-Christian nation"
 
- # Per-strategic-region geography (Regional Dominance drives)
+ # Per-strategic-region geography (by single strategic region)
  state_is_in_la_plata_desc:"Is in La Plata"
  state_is_in_andes_desc:"Is in the Andes"
  state_is_in_brazil_desc:"Is in Brazil"

@@ -307,7 +307,7 @@ country_is_in_oceania = {
 	}
 }
 
-### Per-strategic-region geography triggers (Regional Dominance drives)
+### Per-strategic-region geography triggers (one state-level and one capital-level check per strategic region)
 state_is_in_la_plata = {
 	custom_description = {
 		text = state_is_in_la_plata_desc
