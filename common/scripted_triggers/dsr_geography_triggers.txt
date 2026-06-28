@@ -306,3 +306,490 @@ country_is_in_oceania = {
 		}
 	}
 }
+
+### Per-strategic-region geography triggers (Regional Dominance drives)
+state_is_in_la_plata = {
+	custom_description = {
+		text = state_is_in_la_plata_desc
+		subject = this
+		region ?= sr:region_la_plata
+	}
+}
+
+state_is_in_andes = {
+	custom_description = {
+		text = state_is_in_andes_desc
+		subject = this
+		region ?= sr:region_andes
+	}
+}
+
+state_is_in_brazil = {
+	custom_description = {
+		text = state_is_in_brazil_desc
+		subject = this
+		region ?= sr:region_brazil
+	}
+}
+
+state_is_in_gran_colombia = {
+	custom_description = {
+		text = state_is_in_gran_colombia_desc
+		subject = this
+		region ?= sr:region_gran_colombia
+	}
+}
+
+state_is_in_atlantic_coast = {
+	custom_description = {
+		text = state_is_in_atlantic_coast_desc
+		subject = this
+		region ?= sr:region_atlantic_coast
+	}
+}
+
+state_is_in_great_plains = {
+	custom_description = {
+		text = state_is_in_great_plains_desc
+		subject = this
+		region ?= sr:region_great_plains
+	}
+}
+
+state_is_in_pacific_coast = {
+	custom_description = {
+		text = state_is_in_pacific_coast_desc
+		subject = this
+		region ?= sr:region_pacific_coast
+	}
+}
+
+state_is_in_canada = {
+	custom_description = {
+		text = state_is_in_canada_desc
+		subject = this
+		region ?= sr:region_canada
+	}
+}
+
+state_is_in_northern_europe = {
+	custom_description = {
+		text = state_is_in_northern_europe_desc
+		subject = this
+		region ?= sr:region_northern_europe
+	}
+}
+
+state_is_in_western_europe = {
+	custom_description = {
+		text = state_is_in_western_europe_desc
+		subject = this
+		region ?= sr:region_western_europe
+	}
+}
+
+state_is_in_southern_europe = {
+	custom_description = {
+		text = state_is_in_southern_europe_desc
+		subject = this
+		region ?= sr:region_southern_europe
+	}
+}
+
+state_is_in_central_europe = {
+	custom_description = {
+		text = state_is_in_central_europe_desc
+		subject = this
+		region ?= sr:region_central_europe
+	}
+}
+
+state_is_in_eastern_europe = {
+	custom_description = {
+		text = state_is_in_eastern_europe_desc
+		subject = this
+		region ?= sr:region_eastern_europe
+	}
+}
+
+state_is_in_balkans = {
+	custom_description = {
+		text = state_is_in_balkans_desc
+		subject = this
+		region ?= sr:region_balkans
+	}
+}
+
+state_is_in_near_east = {
+	custom_description = {
+		text = state_is_in_near_east_desc
+		subject = this
+		region ?= sr:region_near_east
+	}
+}
+
+state_is_in_southern_africa = {
+	custom_description = {
+		text = state_is_in_southern_africa_desc
+		subject = this
+		region ?= sr:region_southern_africa
+	}
+}
+
+state_is_in_russia = {
+	custom_description = {
+		text = state_is_in_russia_desc
+		subject = this
+		region ?= sr:region_russia
+	}
+}
+
+state_is_in_siberia = {
+	custom_description = {
+		text = state_is_in_siberia_desc
+		subject = this
+		region ?= sr:region_siberia
+	}
+}
+
+state_is_in_northeast_asia = {
+	custom_description = {
+		text = state_is_in_northeast_asia_desc
+		subject = this
+		region ?= sr:region_northeast_asia
+	}
+}
+
+state_is_in_arabia = {
+	custom_description = {
+		text = state_is_in_arabia_desc
+		subject = this
+		region ?= sr:region_arabia
+	}
+}
+
+state_is_in_greater_persia = {
+	custom_description = {
+		text = state_is_in_greater_persia_desc
+		subject = this
+		region ?= sr:region_greater_persia
+	}
+}
+
+state_is_in_north_india = {
+	custom_description = {
+		text = state_is_in_north_india_desc
+		subject = this
+		region ?= sr:region_north_india
+	}
+}
+
+state_is_in_south_india = {
+	custom_description = {
+		text = state_is_in_south_india_desc
+		subject = this
+		region ?= sr:region_south_india
+	}
+}
+
+state_is_in_north_china = {
+	custom_description = {
+		text = state_is_in_north_china_desc
+		subject = this
+		region ?= sr:region_north_china
+	}
+}
+
+state_is_in_south_china = {
+	custom_description = {
+		text = state_is_in_south_china_desc
+		subject = this
+		region ?= sr:region_south_china
+	}
+}
+
+state_is_in_himalayas = {
+	custom_description = {
+		text = state_is_in_himalayas_desc
+		subject = this
+		region ?= sr:region_himalayas
+	}
+}
+
+state_is_in_indochina = {
+	custom_description = {
+		text = state_is_in_indochina_desc
+		subject = this
+		region ?= sr:region_indochina
+	}
+}
+
+country_is_in_la_plata = {
+	custom_description = {
+		text = country_is_in_la_plata_desc
+		subject = this
+		capital ?= {
+			state_is_in_la_plata = yes
+		}
+	}
+}
+
+country_is_in_andes = {
+	custom_description = {
+		text = country_is_in_andes_desc
+		subject = this
+		capital ?= {
+			state_is_in_andes = yes
+		}
+	}
+}
+
+country_is_in_brazil = {
+	custom_description = {
+		text = country_is_in_brazil_desc
+		subject = this
+		capital ?= {
+			state_is_in_brazil = yes
+		}
+	}
+}
+
+country_is_in_gran_colombia = {
+	custom_description = {
+		text = country_is_in_gran_colombia_desc
+		subject = this
+		capital ?= {
+			state_is_in_gran_colombia = yes
+		}
+	}
+}
+
+country_is_in_atlantic_coast = {
+	custom_description = {
+		text = country_is_in_atlantic_coast_desc
+		subject = this
+		capital ?= {
+			state_is_in_atlantic_coast = yes
+		}
+	}
+}
+
+country_is_in_great_plains = {
+	custom_description = {
+		text = country_is_in_great_plains_desc
+		subject = this
+		capital ?= {
+			state_is_in_great_plains = yes
+		}
+	}
+}
+
+country_is_in_pacific_coast = {
+	custom_description = {
+		text = country_is_in_pacific_coast_desc
+		subject = this
+		capital ?= {
+			state_is_in_pacific_coast = yes
+		}
+	}
+}
+
+country_is_in_canada = {
+	custom_description = {
+		text = country_is_in_canada_desc
+		subject = this
+		capital ?= {
+			state_is_in_canada = yes
+		}
+	}
+}
+
+country_is_in_northern_europe = {
+	custom_description = {
+		text = country_is_in_northern_europe_desc
+		subject = this
+		capital ?= {
+			state_is_in_northern_europe = yes
+		}
+	}
+}
+
+country_is_in_western_europe = {
+	custom_description = {
+		text = country_is_in_western_europe_desc
+		subject = this
+		capital ?= {
+			state_is_in_western_europe = yes
+		}
+	}
+}
+
+country_is_in_southern_europe = {
+	custom_description = {
+		text = country_is_in_southern_europe_desc
+		subject = this
+		capital ?= {
+			state_is_in_southern_europe = yes
+		}
+	}
+}
+
+country_is_in_central_europe = {
+	custom_description = {
+		text = country_is_in_central_europe_desc
+		subject = this
+		capital ?= {
+			state_is_in_central_europe = yes
+		}
+	}
+}
+
+country_is_in_eastern_europe = {
+	custom_description = {
+		text = country_is_in_eastern_europe_desc
+		subject = this
+		capital ?= {
+			state_is_in_eastern_europe = yes
+		}
+	}
+}
+
+country_is_in_balkans = {
+	custom_description = {
+		text = country_is_in_balkans_desc
+		subject = this
+		capital ?= {
+			state_is_in_balkans = yes
+		}
+	}
+}
+
+country_is_in_near_east = {
+	custom_description = {
+		text = country_is_in_near_east_desc
+		subject = this
+		capital ?= {
+			state_is_in_near_east = yes
+		}
+	}
+}
+
+country_is_in_southern_africa = {
+	custom_description = {
+		text = country_is_in_southern_africa_desc
+		subject = this
+		capital ?= {
+			state_is_in_southern_africa = yes
+		}
+	}
+}
+
+country_is_in_russia = {
+	custom_description = {
+		text = country_is_in_russia_desc
+		subject = this
+		capital ?= {
+			state_is_in_russia = yes
+		}
+	}
+}
+
+country_is_in_siberia = {
+	custom_description = {
+		text = country_is_in_siberia_desc
+		subject = this
+		capital ?= {
+			state_is_in_siberia = yes
+		}
+	}
+}
+
+country_is_in_northeast_asia = {
+	custom_description = {
+		text = country_is_in_northeast_asia_desc
+		subject = this
+		capital ?= {
+			state_is_in_northeast_asia = yes
+		}
+	}
+}
+
+country_is_in_arabia = {
+	custom_description = {
+		text = country_is_in_arabia_desc
+		subject = this
+		capital ?= {
+			state_is_in_arabia = yes
+		}
+	}
+}
+
+country_is_in_greater_persia = {
+	custom_description = {
+		text = country_is_in_greater_persia_desc
+		subject = this
+		capital ?= {
+			state_is_in_greater_persia = yes
+		}
+	}
+}
+
+country_is_in_north_india = {
+	custom_description = {
+		text = country_is_in_north_india_desc
+		subject = this
+		capital ?= {
+			state_is_in_north_india = yes
+		}
+	}
+}
+
+country_is_in_south_india = {
+	custom_description = {
+		text = country_is_in_south_india_desc
+		subject = this
+		capital ?= {
+			state_is_in_south_india = yes
+		}
+	}
+}
+
+country_is_in_north_china = {
+	custom_description = {
+		text = country_is_in_north_china_desc
+		subject = this
+		capital ?= {
+			state_is_in_north_china = yes
+		}
+	}
+}
+
+country_is_in_south_china = {
+	custom_description = {
+		text = country_is_in_south_china_desc
+		subject = this
+		capital ?= {
+			state_is_in_south_china = yes
+		}
+	}
+}
+
+country_is_in_himalayas = {
+	custom_description = {
+		text = country_is_in_himalayas_desc
+		subject = this
+		capital ?= {
+			state_is_in_himalayas = yes
+		}
+	}
+}
+
+country_is_in_indochina = {
+	custom_description = {
+		text = country_is_in_indochina_desc
+		subject = this
+		capital ?= {
+			state_is_in_indochina = yes
+		}
+	}
+}
