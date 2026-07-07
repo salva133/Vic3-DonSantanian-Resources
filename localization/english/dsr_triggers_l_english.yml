@@ -34,7 +34,6 @@
  country_is_non_leftist_republic_desc:"Is a non-leftist republic"
  country_is_monanarchy_desc:"Is both a monarchy and an anarchy"
  country_has_fascist_government_trigger_desc:"Has a fascist government"
- is_welfare_state_with_low_legitimacy_desc:"Is a welfare state with low legitimacy"
  # Ideology availability
  is_possible_ideology_fascist_desc:"Has researched the prerequisite for Fascism"
  is_possible_ideology_communist_desc:"Has researched the prerequisite for Communism"

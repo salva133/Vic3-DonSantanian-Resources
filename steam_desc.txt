@@ -48,7 +48,6 @@ Each tests the country's [b]capital[/b] state with the matching state-level trig
 [*][b][code]country_is_non_leftist_republic[/code][/b] — runs a Corporate State, Presidential or Parliamentary Republic.
 [*][b][code]country_is_monanarchy[/code][/b] — holds both the Monarchy and the Anarchy law at once (the combined "monanarchy" shape).
 [*][b][code]country_has_fascist_government_trigger[/code][/b] — detects a fascist government by its legal and heraldic silhouette: either a republican facade with an autocratic executive and a fascist coat of arms, or a corporatist autocracy that is not a Germanic ethnostate, non-ethnostate Austria, or a Hispanophone country (those read as other strains of fascism).
-[*][b][code]is_welfare_state_with_low_legitimacy[/code][/b] — Old Age Pension plus Worker Protections, Social Security and Workplace Safety funded to level 5, and government legitimacy below 25.
 [/list]
 
 [h3]Ideology availability — country scope ([code]dsr_country_triggers.txt[/code])[/h3]
