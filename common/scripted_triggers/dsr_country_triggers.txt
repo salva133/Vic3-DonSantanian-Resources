@@ -87,24 +87,6 @@ country_has_fascist_government_trigger = {
 	}
 }
 
-is_welfare_state_with_low_legitimacy = {
-	custom_description = {
-		text = is_welfare_state_with_low_legitimacy_desc
-		subject = this
-		has_law_or_variant = law_type:law_old_age_pension
-		has_law_or_variant = law_type:law_worker_protections
-		institution_investment_level = {
-			institution = institution_social_security
-			value = 5
-		}
-		institution_investment_level = {
-			institution = institution_workplace_safety
-			value = 5
-		}
-		government_legitimacy < 25
-	}
-}
-
 ### Ideology-availability triggers (prerequisite technology researched)
 is_possible_ideology_fascist = {
 	custom_description = {
@@ -131,40 +113,6 @@ is_possible_ideology_anarchist = {
 }
 
 ### Law-stance triggers
-reactionary_stance_on_free_speech = {
-	custom_description = {
-		text = reactionary_stance_on_free_speech_desc
-		subject = this
-		OR = {
-			law_stance = {
-				law = law_type:law_outlawed_dissent
-				value > neutral
-			}
-			law_stance = {
-				law = law_type:law_state_security
-				value > neutral
-			}
-		}
-	}
-}
-
-liberal_stance_on_free_speech = {
-	custom_description = {
-		text = liberal_stance_on_free_speech_desc
-		subject = this
-		OR = {
-			law_stance = {
-				law = law_type:law_outlawed_dissent
-				value < neutral
-			}
-			law_stance = {
-				law = law_type:law_state_security
-				value < neutral
-			}
-		}
-	}
-}
-
 staunch_multiculturalist = {
 	custom_description = {
 		text = staunch_multiculturalist_desc
