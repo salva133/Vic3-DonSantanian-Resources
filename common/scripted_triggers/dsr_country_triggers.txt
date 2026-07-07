@@ -113,40 +113,6 @@ is_possible_ideology_anarchist = {
 }
 
 ### Law-stance triggers
-reactionary_stance_on_free_speech = {
-	custom_description = {
-		text = reactionary_stance_on_free_speech_desc
-		subject = this
-		OR = {
-			law_stance = {
-				law = law_type:law_outlawed_dissent
-				value > neutral
-			}
-			law_stance = {
-				law = law_type:law_state_security
-				value > neutral
-			}
-		}
-	}
-}
-
-liberal_stance_on_free_speech = {
-	custom_description = {
-		text = liberal_stance_on_free_speech_desc
-		subject = this
-		OR = {
-			law_stance = {
-				law = law_type:law_outlawed_dissent
-				value < neutral
-			}
-			law_stance = {
-				law = law_type:law_state_security
-				value < neutral
-			}
-		}
-	}
-}
-
 staunch_multiculturalist = {
 	custom_description = {
 		text = staunch_multiculturalist_desc

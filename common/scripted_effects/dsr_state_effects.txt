@@ -18,49 +18,6 @@ add_state_trait_to_region_if_missing = {
 	}
 }
 
-# Kills 99% of every pop in the state in scope whose culture is not a primary
-# culture of the state's root country.
-state_kill_all_non_primary_pops = {
-	every_scope_culture = {
-		limit = {
-			NOT = {
-				is_primary_culture_of = root
-			}
-		}
-		prev = {
-			kill_population_percent_in_state = {
-				percent = 0.99
-				culture = prev
-			}
-		}
-	}
-}
-
-# Kills 10% of the pops of every culture sitting at the lowest acceptance tier
-# (cultural acceptance below the status-2 threshold) in the state's root country.
-# State-scoped: call it on the state you want purged of its least-accepted pops.
-# Killing is done per-culture at the state level because kill_population_percent
-# is a country/state-scope effect, not a pop-scope one (looping pops and killing
-# in pop scope logs "Inconsistent effect scopes (pop vs. country)").
-state_kill_acceptance_1_pops = {
-	every_scope_culture = {
-		limit = {
-			root = {
-				cultural_acceptance_base = {
-					target = prev
-					value < acceptance_status_2
-				}
-			}
-		}
-		prev = {
-			kill_population_percent_in_state = {
-				percent = 0.1
-				culture = prev
-			}
-		}
-	}
-}
-
 ### Pop consolidation
 
 # Moves every pop of religion $RELIGION$ from every state in the world into the

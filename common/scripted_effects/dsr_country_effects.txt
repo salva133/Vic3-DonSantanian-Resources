@@ -165,25 +165,6 @@ exile_least_popular_agitator = {
 	}
 }
 
-### Pop surgery (country scope)
-
-# Kills 99% of every non-primary-culture pop in every state of the country in
-# scope, then starts enacting Slavery Banned if slavery is still legal.
-country_kill_all_non_primary_pops_in_all_states = {
-	every_scope_state = {
-		state_kill_all_non_primary_pops = yes
-	}
-	if = {
-		limit = {
-			NOT = {
-				has_law_or_variant = law_type:law_slavery_banned
-			}
-		}
-		start_enactment = law_type:law_slavery_banned
-		add_enactment_phase = 3
-	}
-}
-
 ### Post-collapse helpers (generic, vanilla-only)
 
 # Strips every military and heavy-industry building from each state of the country
