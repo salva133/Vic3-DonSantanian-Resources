@@ -1,0 +1,10 @@
+﻿cuban_pete = {
+	type = personality
+	texture = "gfx/interface/icons/character_trait_icons/inspirational_orator1.dds"
+
+	character_modifier = {}
+
+	value = 0
+
+	weight = 0
+}
