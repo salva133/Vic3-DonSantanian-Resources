@@ -36,6 +36,23 @@ state_is_in_central_america = {
 	}
 }
 
+state_is_in_the_caribbean = {
+	custom_description = {
+		text = state_is_in_the_caribbean_desc
+		subject = this
+		OR = {
+			state_region ?= s:STATE_WESTERN_CUBA
+			state_region ?= s:STATE_EASTERN_CUBA
+			state_region ?= s:STATE_CENTRAL_CUBA
+			state_region ?= s:STATE_HAITI
+			state_region ?= s:STATE_WEST_INDIES
+			state_region ?= s:STATE_BAHAMAS
+			state_region ?= s:STATE_PUERTO_RICO
+			state_region ?= s:STATE_JAMAICA
+		}
+	}
+}
+
 state_is_in_south_america = {
 	custom_description = {
 		text = state_is_in_south_america_desc
@@ -205,6 +222,17 @@ country_is_in_central_america = {
 
 		capital ?= {
 			state_is_in_central_america = yes
+		}
+	}
+}
+
+country_is_in_the_caribbean = {
+	custom_description = {
+		text = country_is_in_the_caribbean_desc
+		subject = this
+
+		capital ?= {
+			state_is_in_the_caribbean = yes
 		}
 	}
 }
