@@ -1,4 +1,4 @@
-annex_subject_with_incorporation = {
+﻿annex_subject_with_incorporation = {
 	if = {
 		limit = {
 			c:$COUNTRY$ ?= { is_subject_of = root }

@@ -1,0 +1,107 @@
+﻿### dsr_geography_triggers.txt
+state_is_in_europe_desc = { global = state_is_in_europe_desc }
+state_is_in_north_america_desc = { global = state_is_in_north_america_desc }
+state_is_in_central_america_desc = { global = state_is_in_central_america_desc }
+state_is_in_the_caribbean_desc = { global = state_is_in_the_caribbean_desc }
+state_is_in_south_america_desc = { global = state_is_in_south_america_desc }
+state_is_in_americas_desc = { global = state_is_in_americas_desc }
+state_is_in_africa_desc = { global = state_is_in_africa_desc }
+state_is_in_middle_east_desc = { global = state_is_in_middle_east_desc }
+state_is_in_central_asia_desc = { global = state_is_in_central_asia_desc }
+state_is_in_india_desc = { global = state_is_in_india_desc }
+state_is_in_east_asia_desc = { global = state_is_in_east_asia_desc }
+state_is_in_china_desc = { global = state_is_in_china_desc }
+state_is_in_southeast_asia_desc = { global = state_is_in_southeast_asia_desc }
+state_is_in_indonesia_desc = { global = state_is_in_indonesia_desc }
+state_is_in_oceania_desc = { global = state_is_in_oceania_desc }
+country_is_in_china_desc = { global = country_is_in_china_desc }
+country_is_in_europe_desc = { global = country_is_in_europe_desc }
+country_is_in_north_america_desc = { global = country_is_in_north_america_desc }
+country_is_in_central_america_desc = { global = country_is_in_central_america_desc }
+country_is_in_the_caribbean_desc = { global = country_is_in_the_caribbean_desc }
+country_is_in_south_america_desc = { global = country_is_in_south_america_desc }
+country_is_in_africa_desc = { global = country_is_in_africa_desc }
+country_is_in_middle_east_desc = { global = country_is_in_middle_east_desc }
+country_is_in_central_asia_desc = { global = country_is_in_central_asia_desc }
+country_is_in_india_desc = { global = country_is_in_india_desc }
+country_is_in_east_asia_desc = { global = country_is_in_east_asia_desc }
+country_is_in_southeast_asia_desc = { global = country_is_in_southeast_asia_desc }
+country_is_in_indonesia_desc = { global = country_is_in_indonesia_desc }
+country_is_in_oceania_desc = { global = country_is_in_oceania_desc }
+state_is_in_la_plata_desc = { global = state_is_in_la_plata_desc }
+state_is_in_andes_desc = { global = state_is_in_andes_desc }
+state_is_in_brazil_desc = { global = state_is_in_brazil_desc }
+state_is_in_gran_colombia_desc = { global = state_is_in_gran_colombia_desc }
+state_is_in_atlantic_coast_desc = { global = state_is_in_atlantic_coast_desc }
+state_is_in_great_plains_desc = { global = state_is_in_great_plains_desc }
+state_is_in_pacific_coast_desc = { global = state_is_in_pacific_coast_desc }
+state_is_in_canada_desc = { global = state_is_in_canada_desc }
+state_is_in_northern_europe_desc = { global = state_is_in_northern_europe_desc }
+state_is_in_western_europe_desc = { global = state_is_in_western_europe_desc }
+state_is_in_southern_europe_desc = { global = state_is_in_southern_europe_desc }
+state_is_in_central_europe_desc = { global = state_is_in_central_europe_desc }
+state_is_in_eastern_europe_desc = { global = state_is_in_eastern_europe_desc }
+state_is_in_balkans_desc = { global = state_is_in_balkans_desc }
+state_is_in_near_east_desc = { global = state_is_in_near_east_desc }
+state_is_in_southern_africa_desc = { global = state_is_in_southern_africa_desc }
+state_is_in_russia_desc = { global = state_is_in_russia_desc }
+state_is_in_siberia_desc = { global = state_is_in_siberia_desc }
+state_is_in_northeast_asia_desc = { global = state_is_in_northeast_asia_desc }
+state_is_in_arabia_desc = { global = state_is_in_arabia_desc }
+state_is_in_greater_persia_desc = { global = state_is_in_greater_persia_desc }
+state_is_in_north_india_desc = { global = state_is_in_north_india_desc }
+state_is_in_south_india_desc = { global = state_is_in_south_india_desc }
+state_is_in_north_china_desc = { global = state_is_in_north_china_desc }
+state_is_in_south_china_desc = { global = state_is_in_south_china_desc }
+state_is_in_himalayas_desc = { global = state_is_in_himalayas_desc }
+state_is_in_indochina_desc = { global = state_is_in_indochina_desc }
+country_is_in_la_plata_desc = { global = country_is_in_la_plata_desc }
+country_is_in_andes_desc = { global = country_is_in_andes_desc }
+country_is_in_brazil_desc = { global = country_is_in_brazil_desc }
+country_is_in_gran_colombia_desc = { global = country_is_in_gran_colombia_desc }
+country_is_in_atlantic_coast_desc = { global = country_is_in_atlantic_coast_desc }
+country_is_in_great_plains_desc = { global = country_is_in_great_plains_desc }
+country_is_in_pacific_coast_desc = { global = country_is_in_pacific_coast_desc }
+country_is_in_canada_desc = { global = country_is_in_canada_desc }
+country_is_in_northern_europe_desc = { global = country_is_in_northern_europe_desc }
+country_is_in_western_europe_desc = { global = country_is_in_western_europe_desc }
+country_is_in_southern_europe_desc = { global = country_is_in_southern_europe_desc }
+country_is_in_central_europe_desc = { global = country_is_in_central_europe_desc }
+country_is_in_eastern_europe_desc = { global = country_is_in_eastern_europe_desc }
+country_is_in_balkans_desc = { global = country_is_in_balkans_desc }
+country_is_in_near_east_desc = { global = country_is_in_near_east_desc }
+country_is_in_southern_africa_desc = { global = country_is_in_southern_africa_desc }
+country_is_in_russia_desc = { global = country_is_in_russia_desc }
+country_is_in_siberia_desc = { global = country_is_in_siberia_desc }
+country_is_in_northeast_asia_desc = { global = country_is_in_northeast_asia_desc }
+country_is_in_arabia_desc = { global = country_is_in_arabia_desc }
+country_is_in_greater_persia_desc = { global = country_is_in_greater_persia_desc }
+country_is_in_north_india_desc = { global = country_is_in_north_india_desc }
+country_is_in_south_india_desc = { global = country_is_in_south_india_desc }
+country_is_in_north_china_desc = { global = country_is_in_north_china_desc }
+country_is_in_south_china_desc = { global = country_is_in_south_china_desc }
+country_is_in_himalayas_desc = { global = country_is_in_himalayas_desc }
+country_is_in_indochina_desc = { global = country_is_in_indochina_desc }
+
+### dsr_country_triggers.txt
+country_is_recognised_desc = { global = country_is_recognised_desc }
+country_is_non_leftist_republic_desc = { global = country_is_non_leftist_republic_desc }
+country_is_monanarchy_desc = { global = country_is_monanarchy_desc }
+country_has_fascist_government_trigger_desc = { global = country_has_fascist_government_trigger_desc }
+is_possible_ideology_fascist_desc = { global = is_possible_ideology_fascist_desc }
+is_possible_ideology_communist_desc = { global = is_possible_ideology_communist_desc }
+is_possible_ideology_anarchist_desc = { global = is_possible_ideology_anarchist_desc }
+staunch_multiculturalist_desc = { global = staunch_multiculturalist_desc }
+country_eligible_as_mass_migration_source_country_desc = { global = country_eligible_as_mass_migration_source_country_desc }
+
+### dsr_state_triggers.txt
+state_is_occupied_desc = { global = state_is_occupied_desc }
+state_is_occupied_by_root_desc = { global = state_is_occupied_by_root_desc }
+
+### dsr_character_triggers.txt
+is_leftist_agitator_desc = { global = is_leftist_agitator_desc }
+is_right_wing_agitator_desc = { global = is_right_wing_agitator_desc }
+
+### dsr_religion_triggers.txt
+country_is_jewish_nation_desc = { global = country_is_jewish_nation_desc }
+country_is_a_judeo_christian_nation_desc = { global = country_is_a_judeo_christian_nation_desc }
