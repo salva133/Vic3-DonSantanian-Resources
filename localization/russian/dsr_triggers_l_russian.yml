@@ -1,14 +1,14 @@
 ﻿l_russian:
  # State-level geography
- state_is_in_the_caribbean_desc:"Находится в Карибском бассейне"
- state_is_in_the_caribbean_desc_not:"Не находится в Карибском бассейне"
+ state_is_in_the_caribbean_desc:"Находится на Карибах"
+ state_is_in_the_caribbean_desc_not:"Не находится на Карибах"
  state_is_in_indonesia_desc:"Находится в Индонезии"
  state_is_in_indonesia_desc_not:"Не находится в Индонезии"
  state_is_in_oceania_desc:"Находится в Океании"
  state_is_in_oceania_desc_not:"Не находится в Океании"
  # Country-level geography (by capital)
- country_is_in_the_caribbean_desc:"Столица находится в Карибском бассейне"
- country_is_in_the_caribbean_desc_not:"Столица не находится в Карибском бассейне"
+ country_is_in_the_caribbean_desc:"Столица находится на Карибах"
+ country_is_in_the_caribbean_desc_not:"Столица не находится на Карибах"
  country_is_in_indonesia_desc:"Столица находится в Индонезии"
  country_is_in_indonesia_desc_not:"Столица не находится в Индонезии"
  country_is_in_oceania_desc:"Столица находится в Океании"
